@@ -1,0 +1,25 @@
+<?xml version="1.1"?>   
+<layout version="1.1">
+	<default>
+        <reference name="head">
+        	<action method="addCss"><stylesheet>sm/slider/css/slider.css</stylesheet></action>
+        </reference>
+        <!-- all pages
+        <reference name="content">
+        	<block type="slider/list" name="default.slider.list">
+			</block>
+        </reference>
+        -->
+	<!--remove name="left"></remove>
+	<remove name="right"></remove-->
+    </default>
+	<slider_index_index>
+		<reference name="content">
+			<block type="slider/list" name="slider.list.default" template="sm/slider/default.phtml">
+				<action method="setConfig">
+				</action>
+			</block>
+		</reference>
+	</slider_index_index>	
+</layout>   
+	

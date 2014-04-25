@@ -1,0 +1,10 @@
+/******************************************
+***          YT Framework: CSS          ***
+*******************************************/
+body .yt-main {
+    width: 960px !important;
+}
+.hide-normal {
+	display: none !important;
+	height: 0px !important;
+}

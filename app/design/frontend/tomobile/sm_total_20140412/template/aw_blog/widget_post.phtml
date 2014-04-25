@@ -1,0 +1,172 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/AW-LICENSE.txt
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento community edition
+ * aheadWorks does not guarantee correct work of this extension
+ * on any other Magento edition except Magento community edition.
+ * aheadWorks does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   AW
+ * @package    AW_Blog
+ * @version    1.2.1
+ * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/AW-LICENSE.txt
+ */
+?>
+<?php 
+/**
+ * Add Filter by store
+ *
+ * @param int|Mage_Core_Model_Store $store
+ * @return AW_Blog_Model_Mysql4_Blog_Collection
+ */
+function getPostsObject($posts) {
+	return $posts;
+}
+
+class DateTimeFormatter
+{
+	private $now;
+	public $invert;
+	public $y, $m, $d, $h, $i, $s;
+
+	function DateTimeFormatter()
+	{
+		$this->now = date_parse(date("Y-m-d H:i:s"));
+	}
+
+	function now()
+	{
+		$this->now = date_parse(date("Y-m-d H:i:s"));
+		return $this->now;
+	}
+
+	function diff($dt)
+	{
+		if (!is_array($dt))
+			$dt = date_parse($dt);
+
+		if ($this->now() > $dt)
+		{
+			$this->invert = 1;
+			$this->y = $this->now['year'] - $dt['year'];
+			$this->m = $this->now['month'] - $dt['month'];
+			$this->d = $this->now['day'] - $dt['day'];
+			$this->h = $this->now['hour'] - $dt['hour'];
+			$this->i = $this->now['minute'] - $dt['minute'];
+			$this->s = $this->now['second'] - $dt['second'];
+		}
+		else
+		{
+			$this->invert = 0;
+			$this->y = $dt['year'] - $this->now['year'];
+			$this->m = $dt['month'] - $this->now['month'];
+			$this->d = $dt['day'] - $this->now['day'];
+			$this->h = $dt['hour'] - $this->now['hour'];
+			$this->i = $dt['minute'] - $this->now['minute'];
+			$this->s = $dt['second'] - $this->now['second'];
+		}
+
+		return $this;
+	}
+
+	function ago($datetime)
+	{
+		$interval = $this->diff($datetime);
+		$suffix = ($interval->invert ? ' ago' : '');
+		if ($v = $interval->y >= 1) return $this->pluralize($interval->y, 'year') . $suffix;
+		if ($v = $interval->m >= 1) return $this->pluralize($interval->m, 'month') . $suffix;
+		if ($v = $interval->d >= 1) return $this->pluralize($interval->d, 'day') . $suffix;
+		if ($v = $interval->h >= 1) return $this->pluralize($interval->h, 'hour') . $suffix;
+		if ($v = $interval->i >= 1) return $this->pluralize($interval->i, 'minute') . $suffix;
+		return $this->pluralize($interval->s, 'second') . $suffix;
+	}
+
+	function pluralize( $count, $text )
+	{
+		return $count . (($count == 1) ? (" $text") : (" ${text}s"));
+	}
+}
+/*
+ * Subtract date and date
+ * 
+ * @param int!time1
+ * @param int!time2
+ * @return datetime_diff
+ */
+function getSubTime($time1, $time2){
+	$now = new DateTime(date('m/d/y h:i:s', $time1));
+	$ref = new DateTime(date('m/d/y h:i:s', $time2));
+	return $now->diff($ref);
+}
+/*
+ * filter content
+*
+* @param string $content
+* @return string
+*/
+function filterContent($content){
+	$helper = Mage::helper('cms');
+	$processor = $helper->getPageTemplateProcessor();
+	$html = $processor->filter($content);
+	return $html;
+}
+?>
+<?php if ($posts = $this->getRecent()){ ?>
+	<div class="block-post-lastest block">
+		<div class="block-title">
+			<h3><?php echo $this->getData("custom_title") ?></h3>
+		</div>
+
+		<?php 
+			$post_first = getPostsObject($posts)->getFirstItem();
+		?>
+		<div class="block-content">
+			<div class="row">
+				<div class="span3 banner">
+					<a class="post-image" href="<?php echo $post_first->getAddress(); ?>" title="<?php echo $post_first->getTitle(); ?>">
+						<img alt="" src="<?php echo  Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$post_first->getPostImage();?>"/> 
+						<span class="hover_shine">&nbsp;</span>
+					</a>
+				</div>
+				
+				<div class="span5">
+					<div class="post-image-after">
+						<h1><a href="<?php echo $post_first->getAddress(); ?>" title="<?php echo $post_first->getTitle(); ?>"><?php echo $post_first->getTitle(); ?></a></h1>
+			            <?php 
+			            	$now = new DateTimeFormatter();
+			            	$diff_time = $now->diff(new DateTime(date('m/d/y h:i:s', strtotime($post_first->getCreatedTime()))));
+							//$diff_time = getSubTime(time(), strtotime($post_first->getCreatedTime())); 
+			            ?>
+						<span class="post-createdon"><?php echo $diff_time->d ?> <?php echo ($diff_time->d >1)?Mage::helper('blog')->__('days ago'):Mage::helper('blog')->__('day ago'); ?></span>
+						<?php echo filterContent($post_first->getShortContent()); ?>
+					</div>
+				</div>
+				<div class="span4">
+				    <div class="widget-latest">
+				        <h2><?php echo Mage::helper('blog')->__('Latest Posts'); ?></h2>
+				        <ul>
+				            <?php foreach ($posts as $post): ?>
+				            	<?php if($post->getId() == $post_first->getId()){ continue; } ?>
+				                <li><a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle(); ?></a></li>
+				            <?php endforeach; ?>
+				        </ul>
+				    </div>
+			    </div>
+	    	</div>
+	    </div>
+    </div>
+<?php } ?>

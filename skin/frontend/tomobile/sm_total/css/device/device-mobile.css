@@ -1,0 +1,141 @@
+/******************************************
+***          YT Framework: CSS          ***
+*******************************************/
+body .yt-main {
+    width: 100%;
+    max-width: 690px;
+}
+body .yt-main .yt-main-in1{
+
+}
+
+body.fs1 #yt_wrapper {
+  font-size: 1.1em !important;
+}
+
+body.fs2 #yt_wrapper {
+  font-size: 1.2em !important;
+}
+
+body.fs3 #yt_wrapper {
+  font-size: 1.3em !important;
+}
+#yt_menuwrap {
+    padding-bottom: 20px;
+}
+body.fs4 #yt_wrapper{
+  font-size: 1.4em !important;
+}
+
+body.fs5 #yt_wrapper {
+  font-size: 1.5em !important;
+}
+
+body.fs6 #yt_wrapper {
+  font-size: 1.7em !important;
+}
+
+#yt_col1,
+#content_main,
+#content_left,
+#yt_col2{
+	width:100% !important;
+}
+#user3,
+#user4,
+#user5,
+#user6,
+#usera,
+#userb,
+#userc,
+#userd,
+#user10,
+#user11,
+#user12,
+#user13,
+#user14
+{
+	width:50% !important;
+}
+.masonry-brick.grid-05,
+.masonry-brick.grid-1 {
+    width: 49.9%;
+}
+.masonry-brick.grid-2,
+.masonry-brick.grid-3{
+	width:100%;
+}
+.hide-mobile {
+	display: none !important;
+	height: 0px !important;
+}
+/* ----------------------------*/
+/*     Block: yt_header        */
+/* ----------------------------*/
+#yt_header .yt-main .yt-main-in1{
+	margin:0 10px;
+}
+#header2{
+	width:auto !important
+}
+/* ----------------------------*/
+/*     Block: yt_menuwrap      */
+/* ----------------------------*/
+#yt-mobilemenu{
+	display:block;
+}
+#meganavigator,
+ul.navi,
+ul.navirtl {
+	display:none !important;
+}
+#yt_menuwrap .yt-main .yt-main-in1{
+	margin:0 10px;
+}
+#yt-mobilemenu{
+	margin:10px 0 0 10px;
+}
+.rtl #yt-mobilemenu{
+	margin:10px 10px 0 0px;
+}
+#yt_searchcustom {
+    display: block;
+    padding: 8px 0 0 0;
+}
+/* ----------------------------*/
+/*     Block: content          */
+/* ----------------------------*/
+#yt_component{
+	width:100% !important;
+}
+#left1,
+#left2,
+#right1,
+#right2{
+	width:49.9% !important;
+}
+.group-footnav{
+	display:none;
+}
+.yt-copyright{
+	width:100% !important;
+	text-align:center;
+}
+.cols-2 .item{
+	width:100% !important;
+}
+.cols-2 .column-2 .item-inner{
+	padding:0 0;
+}
+/* ----------------------------*/
+/*     Block: yt_spotlight3    */
+/* ----------------------------*/
+#yt_spotlight3 #user12,
+#yt_spotlight3 #user13 {
+	padding: 20px 0;
+}
+#yt-totop {
+    width: 37px;
+    height: 37px;
+    display: none;
+}

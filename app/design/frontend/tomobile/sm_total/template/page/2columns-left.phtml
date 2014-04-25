@@ -1,0 +1,183 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   design_default
+ * @package    Mage
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+ global $var_yttheme;
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->getLang() ?>" lang="<?php echo $this->getLang() ?>">
+
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<?php 
+	$store = Mage::app()->getStore();
+	$name = $store->getname();
+?>
+<!--[if IE 8 ]><body id="bd" class="ie8 <?php echo $var_yttheme->template." ".$name; ?> <?php echo $this->getBodyClass();?>"><![endif]-->
+<body id="bd" class="<?php echo $var_yttheme->template." ".$name; ?> <?php echo $this->getBodyClass();?>">
+    <div id="yt_wrapper">
+        <!-- BEGIN: Header -->
+		<div id="yt_header" class="wrap">
+			<?php echo $this->getChildHtml('header') ?>
+			<!-- END: Header -->
+			<?php if ($this->getChildHtml('slideshow')) : ?>
+			<!-- BEGIN: SlideShow -->
+			<div id="yt_slideshow" class="wrap"><div class="wrap-inner">
+				<div class="main clearfix">
+					<?php echo $this->getChildHtml('slideshow') ?>
+				</div></div>
+			</div>
+			<!--[if IE 7]>
+				<br class="clear" />
+			<![endif]-->
+			<!-- END: SlideShow -->
+			<?php endif; ?>
+		</div>
+		<?php /*
+        <?php if ($this->getChildHtml('topsl')) : ?>
+        <!-- BEGIN: Top Spotlight -->
+        <div id="yt_topsl" class="wrap">
+            <div class="main">
+                <div class="inner-top clearfix">
+            <?php echo $this->getChildHtml('topsl') ?>
+            </div>
+          </div>
+        </div>
+        <!-- END: Top Spotlight -->
+        <?php endif; ?>
+		*/ ?>
+        <!-- BEGIN: Main Content -->
+        <div id="yt_container" class="wrap yt-r col-main">
+            <div class="main clearfix">
+                <div id="yt_mainbody">
+                    <div id="yt_main" class="clearfix">
+                        <div id="yt_containerwrap" class="clearfix yt-r container">
+                            <!-- CONTENT -->
+                            <div id="yt_content" class="row">
+
+                                <!-- COLUMN  -->
+                                <div id="yt_left" class="yt-col yt-leftcol">
+									<div class="span3" data-normal="span3" data-tablet="span3" data-stablet="span4">
+										<?php echo $this->getChildHtml('left') ?>
+									</div>
+                                </div>
+                                <!-- //COLUMN -->
+
+                                <div id="yt_current_content" class="column">
+									<div class="span9" data-normal="span9" data-tablet="span9"  data-stablet="span8">
+										<!-- global messages -->
+										<?php echo $this->getChildHtml('global_messages') ?>
+										<!-- // global messages -->
+										<!-- breadcrumbs -->
+										<?php //echo $this->getChildHtml('breadcrumbs') ?>
+										<!-- // breadcrumbs -->
+										<div id="yt_content_top" class="yt-content-top clearfix">
+											<!-- primary content -->
+											<?php echo $this->getChildHtml('content-top') ?>
+											<!-- // primary content -->
+										</div>
+
+										<div id="yt_content_main" class="yt-content-main clearfix" >
+											<!-- primary content -->
+											<?php echo $this->getChildHtml('content') ?>
+											<!-- // primary content -->
+										</div>
+										<div id="yt_content_bottom" class="clearfix">
+											<!-- primary content -->
+											<?php echo $this->getChildHtml('content-bottom') ?>
+											<!-- // primary content -->
+										</div>
+									</div>
+                                </div>
+
+                            </div>
+                            <!-- //CONTENT -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: Main Content -->
+
+		<!-- BEGIN: Ads -->
+    	<div id="yt_ads" class="position-4">
+            <div class="main clearfix">
+            	<div class="block-ads">
+					<div class="container">
+						<div class="row-fluid">
+							<?php echo $this->getChildHtml('ads') ?>
+						</div>
+					</div>
+                </div>
+        	</div>
+        </div>
+        <!-- END: Ads -->
+
+        <!-- BEGIN: Footerwrap -->
+        <div id="yt_footerwrap">
+        	<!-- BEGIN: Bottom product slider -->
+            <?php if ($this->getChildHtml('botproduct')) : ?>
+                <div id="yt_botslider" class="wrap">
+                    <div class="main clearfix">
+                        <?php echo $this->getChildHtml('botproduct') ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <!-- END: Bottom product slider -->
+			<!-- BEGIN: Bottom spotlight -->
+            <?php if ($this->getChildHtml('botsl')) : ?>
+                <div id="yt_botsl" class="wrap">
+                    <div class="main clearfix">
+                        <?php echo $this->getChildHtml('botsl') ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+        	<!-- END: Bottom spotlight -->
+        	<!-- BEGIN: Bottom spotlight1 -->
+            <?php if ($this->getChildHtml('botsl1')) : ?>
+                <div id="yt_botsl1" class="wrap">
+                    <div class="main clearfix">
+                        <?php echo $this->getChildHtml('botsl1') ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+        	<!-- END: Bottom spotlight1 -->
+            <!-- BEGIN: Footer -->
+        	<?php echo $this->getChildHtml('footer') ?>
+        	<!-- END: Footer -->
+        </div>
+        <!-- END: Footerwrap -->
+		<?php echo $this->getChildHtml('before_body_end') ?>
+		<?php echo $this->getChildHtml('after_body_start') ?>
+        <?php echo $this->getAbsoluteFooter() ?>
+    </div>
+</body>
+</html>

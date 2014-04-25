@@ -1,0 +1,153 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   design_default
+ * @package    Mage
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+global $var_yttheme;
+//$var_yttheme->renderToolList(2, 'gif');
+?>
+<?php /*
+<div id="yt_header" class="wrap">*/ ?>
+	<div class="main clearfix">
+		<div class="header-top">
+			<div class="container">
+				<div class="header-top-wrap">
+					<div class="row-fluid">
+					<!-- BEGIN: Logo -->
+						<div class="span2" data-normal="span2" data-tablet="span3" data-stablet="span4">
+							<h1 id="logo" class="font1">
+                            	<a href="<?php echo $this->getUrl('') ?>"><span></span></a>
+                            </h1>
+						</div>
+					<!-- END: Logo -->
+					<!-- BEGIN: Quick Access -->
+						<div class="span5" data-normal="span5" data-tablet="span5 yt-quick-access-wrap" data-stablet="span8">
+							<div class="yt-quick-access" >
+								<div class="quick-access">
+									<div class="shop-access <?php echo (!$this->helper('customer')->isLoggedIn() )?'notlogin':'islogin' ?> ">
+										<?php echo $this->getChildHtml('topLinks') ?>
+										<!--<strong><?php //echo $this->getWelcome() ?></strong>-->
+										<?php if(!$this->helper('customer')->isLoggedIn() ): ?> 
+											<ul class="li-add">	
+												<li class="last item-li4">									
+													<a title="Log In" href="javascript:void(0)">Log In</a>
+													<div class="login-quick" style="display:none">
+														<?php echo $this->getChildHtml('customer_form_mini_login') ?>
+													</div>
+												</li>
+											</ul>		
+										<?php endif; ?>
+									</div>
+								</div>
+							</div>
+						</div>
+					<!-- END: Quick Access -->
+					<!-- BEGIN: Quick Access -->
+						<div class="span5 top-search-wrap" data-normal="span5 top-search-wrap" data-tablet="span4 top-search-wrap" data-stablet="span6 top-search-wrap">
+							<div class="search-cart-info">
+								<div class="top-search">
+									<?php  echo $this->getChildHtml('topSearch') ?>
+								</div>
+								<div class="header-top-addcart" >
+									<?php //echo $this->getChildHtml('linkscartpro') ?>
+									<?php  echo $this->getChildHtml('mini-cartpro') ?>
+								</div>
+							</div>
+						</div>
+					<!-- END: Quick Access -->
+					<!-- BEGIN: Quick Access -->
+						<!--div class="span2 top-cart-wrap" data-normal="span3 top-cart-wrap" data-tablet="top-cart-wrap" data-stablet="span6 top-cart-wrap">
+							<div class="header-top-addcart" >
+								<?php //echo $this->getChildHtml('linkscartpro') ?>
+								<?php // echo $this->getChildHtml('mini-cartpro') ?>
+							</div>
+						</div-->
+					<!-- END: Quick Access -->
+					<?php /*//if ($this->getChildHtml('currency')) : ?>
+						<div class="span3">
+							<div class="yt-top">
+								<?php //echo $this->getChildHtml('currency') ?>
+								<?php echo $this->getChildHtml('store_language') ?>
+							</div>
+						</div>
+					<?php //endif; */?>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- BEGIN: Main Navigation -->
+		<!-- <div class="navbar navbar-inverse navbar-fixed-top">	 -->
+		<div class="header-nav">
+			<!-- <div class="navbar-inner"> -->
+				<div class="container">
+					<div class="mtop30">
+						<div class="row-fluid">
+							<div class="header-nav-inner">
+								<div id="yt_mainnav" class="clearfix span11" data-normal="span12" data-tablet="span12" data-stablet="span12">
+									<?php
+									if($var_yttheme->getParam('menustyle')=='mega'){
+										echo $this->getChildHtml('megaMenu');
+									}else{
+										echo $this->getChildHtml('topMenu');
+									}
+									?>									
+								</div>
+								<div class="sm-megamenu-hidden">
+										<?php echo $this->getChildHtml('mobinav') ?>
+								</div>
+								<div class="span1 header-currency-wrap">
+									<div class="header-currency">
+										<?php echo $this->getChildHtml('currency'); ?>
+									</div>
+								</div>
+								<div class="header-language-wrap">
+									<div class="header-language">
+										<?php echo $this->getChildHtml('store_language'); ?>
+									</div>
+								</div>
+								<!--div class="span2">
+									<div class="header-currency">
+										<?php //echo $this->getChildHtml('currency'); ?>
+									</div>
+								</div-->
+							</div>
+						</div>
+					</div>
+				</div>
+			<!-- </div> -->
+		</div>
+		<!-- END: Main Navigation -->
+	<?php /*
+		<div id="yt_wraptop" class="clearfix">
+			<div class="container">
+				<div class="wraptop-main">
+				</div>
+				<div class="wraptop-bottom"></div>
+			</div>
+		</div>
+	*/ ?>
+	</div>
+<?php /*close div yt-header </div> */ ?>
+
+<!--<div id="yt_menuwrap" class="wrap">
+</div>-->

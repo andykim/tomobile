@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 6, 2014, 10:40:03 PM
+    Author     : macbookpro
+*/
+h1#logo a{
+    padding-left: 0px;
+}
+h1#logo a span {
+    background: url("../images/logo/custom_logo.png") no-repeat scroll 0 8px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 53px;
+    width: 190px;
+}
+
+span.phone {
+    background: url("../images/custom/phone.png") no-repeat scroll 0 8px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 34px;
+    width: 136px;
+}
+.head-middle{
+    background: #4a3838;
+}
+.head-middle .span3{
+   margin-left: 0px;
+}
+.top-search {
+    float: right;
+    margin-right: 0;
+}
+.block-ads{
+    background: #a32e3a;
+}
+
+.yt-info{
+    background: #a32e3a;
+}
+.yt-copyright{
+    background: #a32e3a;
+}

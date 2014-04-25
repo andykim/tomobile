@@ -1,0 +1,122 @@
+<?xml version="1.0"?>   
+<layout version="1.0">
+	<default>
+        <reference name="head">
+        	<action method="addCss"><stylesheet>sm/blocktabs/blocktabs.css</stylesheet></action>
+        </reference>
+    </default>
+	<cms_index_index>
+		<!--<reference name="content-bottom">
+			<block type="blocktabs/tabs" name="yeah" template="sm/blocktabs/tabs.phtml">
+        		<block type="blocktabs/tabs_featured" name="tab1" template="sm/blocktabs/grid.phtml">
+	        		<action method="setConfig">
+		        		<values>
+		        			<block_title>Featured</block_title>
+		        			<product_limitation>12</product_limitation>
+		        			
+							<product_image_disp>1</product_image_disp>
+							<product_image_width>175</product_image_width>
+							<product_image_height>135</product_image_height>
+			
+							<product_title_disp>1</product_title_disp>
+							<product_title_max_length>15</product_title_max_length>
+			
+							<product_description_disp>0</product_description_disp>
+							<product_description_src>short_description</product_description_src>
+							<product_description_strip_tags>0</product_description_strip_tags>
+							<product_description_keep_tags></product_description_keep_tags>
+							<product_description_max_length>40</product_description_max_length>
+			
+							<product_price_disp>1</product_price_disp>
+							<product_rating_summary>1</product_rating_summary>
+							<product_cart_or_status>1</product_cart_or_status>
+							<product_addtocompare>1</product_addtocompare>
+							<product_addtowishlist>0</product_addtowishlist>
+						</values>
+	        		</action>
+				</block>
+				<block type="basicproducts/home" name="tab2" template="sm/blocktabs/grid.phtml">
+	        		<action method="setConfig">
+	        			<values>
+	        				<block_title>Best Selling</block_title>
+	        				<product_order_by>best_sales</product_order_by>
+	        				<product_limitation>12</product_limitation>
+							<product_image_disp>1</product_image_disp>
+							<product_image_width>175</product_image_width>
+							<product_image_height>135</product_image_height>
+	        			</values>
+	        		</action>
+				</block>
+				<block type="basicproducts/home" name="tab3" template="sm/blocktabs/grid.phtml">
+	        		<action method="setConfig">
+	        			<values>
+	        				<block_title>New Arrivals</block_title>
+	        				<product_order_by>created_at</product_order_by>
+	        				<product_order_dir>DESC</product_order_dir>
+	        				<product_limitation>12</product_limitation>
+							<product_image_disp>1</product_image_disp>
+							<product_image_width>175</product_image_width>
+							<product_image_height>135</product_image_height>
+	        			</values>
+	        		</action>
+				</block>
+			</block>
+		</reference>-->
+	</cms_index_index>
+	<blocktabs_index_index>
+		<reference name="head">
+        	<action method="addCss"><stylesheet>sm/blocktabs/blocktabs.css</stylesheet></action>
+        </reference>
+		<reference name="content">
+			<block type="blocktabs/tabs" name="yeah" template="sm/blocktabs/tabs.phtml">
+        		<block type="blocktabs/tabs_featured" name="tab1" template="sm/blocktabs/grid.phtml">
+	        		<action method="setConfig">
+		        		<values>
+		        			<block_title>Featured</block_title>
+		        			<product_limitation>12</product_limitation>
+		        			
+							<product_image_disp>1</product_image_disp>
+							<product_image_width>135</product_image_width>
+							<product_image_height></product_image_height>
+			
+							<product_title_disp>1</product_title_disp>
+							<product_title_max_length>25</product_title_max_length>
+			
+							<product_description_disp>1</product_description_disp>
+							<product_description_src>short_description</product_description_src>
+							<product_description_strip_tags>0</product_description_strip_tags>
+							<product_description_keep_tags></product_description_keep_tags>
+							<product_description_max_length>40</product_description_max_length>
+			
+							<product_price_disp>1</product_price_disp>
+							<product_rating_summary>1</product_rating_summary>
+							<product_cart_or_status>1</product_cart_or_status>
+							<product_addtocompare>1</product_addtocompare>
+							<product_addtowishlist>1</product_addtowishlist>
+						</values>
+	        		</action>
+				</block>
+				<block type="basicproducts/home" name="tab2" template="sm/blocktabs/grid.phtml">
+	        		<action method="setConfig">
+	        			<values>
+	        				<block_title>Best Selling</block_title>
+	        				<product_order_by>best_sales</product_order_by>
+	        				<product_limitation>12</product_limitation>
+	        			</values>
+	        		</action>
+				</block>
+				<block type="basicproducts/home" name="tab3" template="sm/blocktabs/grid.phtml">
+	        		<action method="setConfig">
+	        			<values>
+	        				<block_title>New Arrivals</block_title>
+	        				<product_order_by>created_at</product_order_by>
+	        				<product_order_dir>DESC</product_order_dir>
+	        				<product_limitation>12</product_limitation>
+	        			</values>
+	        		</action>
+				</block>
+			</block>
+		</reference>
+	</blocktabs_index_index>	
+</layout>   
+	

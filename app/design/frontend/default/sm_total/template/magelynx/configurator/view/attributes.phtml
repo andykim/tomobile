@@ -1,0 +1,22 @@
+<?php
+
+$attributes = $this->getAttributeCollection()->getItems();
+$_product = $this->getProduct();
+
+?>
+<div class="attributes">
+	<?php foreach($attributes as $attribute): ?>
+		<?php echo $this->renderAttribute($attribute);?>    
+	<?php endforeach; ?>
+
+		
+	<?php echo $this->renderColorAttribute(); ?>    
+</div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+            jQuery(".attributes").accordion({
+                autoHeight: false
+            });
+        });
+</script>

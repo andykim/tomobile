@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?> <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd" > <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+<defs >
+<font id="fontello" horiz-adv-x="689" ><font-face
+    font-family="fontello"
+    units-per-em="2048"
+    panose-1="2 0 6 3 0 0 0 0 0 0"
+    ascent="1556"
+    descent="-368"
+    alphabetic="0" />
+<missing-glyph horiz-adv-x="745" d="M68 0V1364H610V0H68ZM135 68H543V1296H135V68Z" />
+</font>
+</defs>
+</svg>

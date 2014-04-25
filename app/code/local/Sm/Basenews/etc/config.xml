@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<config>
+	<global>
+		<models>
+            <basenews>
+                <class>Sm_Basenews_Model</class>
+            </basenews>
+        </models>
+		<blocks>
+            <basenews>
+                <class>Sm_Basenews_Block</class>
+            </basenews>            		
+        </blocks>				
+		<helpers>
+            <basenews>
+                <class>Sm_Basenews_Helper</class>
+            </basenews>
+        </helpers>
+        <resources>
+        	<basenews_setup>
+        		<setup>
+        			<module>Sm_Basenews</module>
+        		</setup>
+        	</basenews_setup>
+        </resources>
+	</global>
+	<frontend>
+        <routers>
+			<basenews>
+                <use>standard</use>
+                <args>
+                    <module>Sm_Basenews</module>
+                    <frontName>basenews</frontName>
+                </args>
+            </basenews>
+        </routers>
+		<layout>
+            <updates>
+                <basenews module="Sm_Basenews">
+					<file>sm/basenews.xml</file>
+                </basenews>
+            </updates>
+        </layout>
+        <translate>
+      		<modules>
+          		<Sm_Basenews>
+                     <files>
+                          <default>Sm_Basenews.csv</default>
+                     </files>
+                </Sm_Basenews>
+            </modules>
+        </translate>
+	</frontend>
+	<adminhtml>
+        <translate>
+      		<modules>
+          		<Sm_Basenews>
+                     <files>
+                          <default>Sm_Basenews.csv</default>
+                     </files>
+                </Sm_Basenews>
+            </modules>
+        </translate>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>										
+										<basenews_cfg translate="title" module="basenews">
+											<title>SM Basenews Settings</title>
+										</basenews_cfg>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	<default>
+        <basenews_cfg>
+        	<general>
+                <isenabled>1</isenabled>
+                <title>SM Base News</title>
+            </general>
+			<module_setting>
+				<cms_page></cms_page>
+				<theme>theme1</theme>
+				<product_links_target>_self</product_links_target>
+			</module_setting>	
+					
+            <accodion_setting>
+            	<accmouseenter>click</accmouseenter>
+            	<item_first_display>1</item_first_display>
+            </accodion_setting>
+            
+            <basic_setting>
+            	<nb_column1>6</nb_column1>
+				<nb_column2>4</nb_column2>
+				<nb_column3>2</nb_column3>
+				<nb_column4>1</nb_column4>
+            </basic_setting>
+				
+			<product_display_setting>
+				<product_title_disp>1</product_title_disp>
+				<product_title_max_characters>20</product_title_max_characters>
+				
+				<product_image_disp>1</product_image_disp>
+				<product_image_width>200</product_image_width>
+				<product_image_height>150</product_image_height>
+				
+				<item_desc_display>1</item_desc_display>
+				<item_desc_max_characs>150</item_desc_max_characs>
+                <item_description_striptags>1</item_description_striptags>
+                <item_description_keeptags></item_description_keeptags>
+                
+				<product_details_page_link_disp>1</product_details_page_link_disp>
+				<product_details_page_link_text>See details</product_details_page_link_text>
+				
+			</product_display_setting>
+            <advanced>
+            	<include_jquery>1</include_jquery>
+            	<pretext></pretext>
+            	<posttext></posttext>
+            </advanced>
+        </basenews_cfg>
+    </default>
+</config>

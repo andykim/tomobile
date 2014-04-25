@@ -1,0 +1,29 @@
+/******************************************
+***          YT Framework: CSS          ***
+*******************************************/
+body .yt-main {
+    width: 1200px !important;
+}
+#content_sidebar{
+	width:20%;
+}
+#content_main{
+	width:80%;
+}
+.content.no-sidebar #content_main{
+	width:100%;
+}
+#user14 {
+	display: inline;
+}
+#user10, #user11, #user12, #user13, #user14 {
+	width: 20% !important;
+}
+.hide-wide {
+	display: none !important;
+	height: 0px !important;
+}
+.only-5col {
+	display: inline;
+	height: auto;
+}

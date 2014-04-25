@@ -1,0 +1,58 @@
+.sm_megamenu_menu li:hover .sm_megamenu_dropdown_fullwidth,
+.sm_megamenu_menu li.right:hover .sm_megamenu_dropdown_fullwidth {
+	*top:63px;
+}
+.sm_megamenu_menu li div a {
+	*display:inline;
+}
+.sm_megamenu_menu button {
+	margin-right:30px;
+	padding: 0px;
+}
+.sm_megamenu_menu .sm_megamenu_dropdown_1column, 
+.sm_megamenu_menu .sm_megamenu_dropdown_2columns, 
+.sm_megamenu_menu .sm_megamenu_dropdown_3columns, 
+.sm_megamenu_menu .sm_megamenu_dropdown_4columns,
+.sm_megamenu_menu .sm_megamenu_dropdown_5columns,
+.sm_megamenu_menu .sm_megamenu_dropdown_6columns,
+.sm_megamenu_menu .sm_megamenu_dropdown_fullwidth {
+	/* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFEEEEEE, endColorstr=#FFBBBBBB); */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF161616, endColorstr=#FF0A0A0A)";	
+}
+
+.sm_megamenu_menu_black {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF555555, endColorstr=#FF2A2A2A);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF555555, endColorstr=#FF2A2A2A)";	
+}
+.sm_megamenu_menu_blue {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF0272a7, endColorstr=#FF013953);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF0272a7, endColorstr=#FF013953)";	
+}
+.sm_megamenu_menu_brown {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF736033, endColorstr=#FF382f19);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF736033, endColorstr=#FF382f19)";	
+}
+.sm_megamenu_menu_green {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF658c26, endColorstr=#FF354914);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF658c26, endColorstr=#FF354914)";	
+}
+.sm_megamenu_menu_lightblue {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF709e8e, endColorstr=#FF52786b);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF709e8e, endColorstr=#FF52786b)";	
+}
+.sm_megamenu_menu_orange {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFff6717, endColorstr=#FFc14300);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFff6717, endColorstr=#FFc14300)";	
+}
+.sm_megamenu_menu_pink {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFd50066, endColorstr=#FF80003d);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFd50066, endColorstr=#FF80003d)";	
+}
+.sm_megamenu_menu_purple {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF8c8094, endColorstr=#FF615867);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF8c8094, endColorstr=#FF615867)";	
+}
+.sm_megamenu_menu_red {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFd70b02, endColorstr=#FF830701);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFd70b02, endColorstr=#FF830701)";	
+}

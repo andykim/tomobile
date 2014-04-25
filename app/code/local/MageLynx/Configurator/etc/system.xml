@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <configurator translate="label" module="configurator">
+            <label>Configurator</label>
+            <sort_order>100</sort_order>
+        </configurator>
+    </tabs>
+    <sections>
+        <configurator translate="label" module="configurator">
+            <label>Options</label>
+            <tab>configurator</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+ 
+            <groups>
+                <settings translate="label" module="configurator">
+                    <label>Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+ 
+                    <fields>                        
+                        <color translate="label">
+                            <label>Color attribute</label>
+                            <comment>This attribute should contain the options used as colors to colorify the preview</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <source_model>configurator/source_attribute</source_model>
+                        </color>
+                        <width translate="label">
+                            <label>Preview width</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </width>
+                        <height translate="label">
+                            <label>Preview height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </height>                        
+                    </fields>
+                </settings>                                
+            </groups>
+        </configurator>
+    </sections>
+</config>

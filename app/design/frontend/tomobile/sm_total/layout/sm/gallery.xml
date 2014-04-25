@@ -1,0 +1,15 @@
+<?xml version="1.0"?>   
+<layout version="1.0">
+	<default>
+        <reference name="head">
+        	<action method="addCss"><stylesheet>sm/gallery/css/gallery.css</stylesheet></action>
+			<!--<action method="addCss"><stylesheet>sm/gallery/css/jquery.fancybox-1.3.4.css</stylesheet></action>-->
+        </reference>
+    </default>
+	<gallery_index_index>
+		<reference name="content">
+			<block type="gallery/list" name="gallery.list.default"></block>
+		</reference>
+	</gallery_index_index>	
+</layout>   
+	

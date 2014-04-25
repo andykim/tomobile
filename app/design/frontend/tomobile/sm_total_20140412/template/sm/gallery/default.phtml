@@ -1,0 +1,151 @@
+<?php
+/*------------------------------------------------------------------------
+ # SM Gallery - Version 1.0
+ # Copyright (c) 2013 YouTech Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: YouTech Company
+ # Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+
+$options = $this->getConfigObject();
+$smarthelper= Mage::helper('gallery/utils');
+$items = $this->getImages();
+if (count($items)>0){
+	echo $this->getScriptTags();
+	$instance	= rand().time();
+	$titleposition			= $options->titleposition;
+	$transition				= $options->transition;
+	$show_nextprev			= $options->show_nextprev;
+	$count = count($items);
+	$total = (int)$options->numberImage;
+	if($total > $count){
+		$total = $count;
+	}
+	$total_image_pag = $options->items_page;
+	$pags = (int)ceil($total/$total_image_pag);
+	$play = $options->play;
+	if (!$play){
+		$interval = 0;
+	} else {
+		$interval = $options->interval;
+	}?>
+
+
+<div id="sj_gallery_<?php echo $instance;?>" class="sj-gallery <?php if( $options->effect == 'slide' ){ echo $options->effect;}?> <?php echo $options->deviceclass_sfx;?>" data-interval="<?php echo $interval;?>" data-pause="hover">
+	<?php if(!empty($options->pretext)) { ?>
+	<div class="pre-text">
+		<?php echo $options->pretext; ?>
+	</div>	
+	<?php } ?>
+	<div class="sj-gallery-title block-title">Mobile Gallery</div>
+	<div class="sj-navigation clearfix">
+		<div class="sj-buttons">
+			<ul>
+				<?php if($show_nextprev==1){ ?>
+				<li class="sj-prev i-back" href="#sj_gallery_<?php echo $instance;?>" data-jslide="prev"></li>
+				<?php } ?>
+				<?php for($j=0; $j<$pags; $j++): ?>
+					<li class="sj-nav <?php if( $j == 0 ){echo ' sel';}?>"  href="#sj_gallery_<?php echo $instance;?>" data-jslide="<?php echo $j;?>"></li>
+				<?php endfor; ?>						
+				<?php if($show_nextprev==1){ ?>
+				<li class="sj-next i-next"  href="#sj_gallery_<?php echo $instance;?>" data-jslide="next"></li>
+				<?php } ?>
+			</ul>
+		</div>
+	</div>
+	<div class="sj-content">
+		<div class="sj-items">
+			<?php
+			for($i=0; $i<$pags; $i++){ ?>
+			<div class="sj-item <?php if($i==0){echo "active";}?> item">
+				<?php $start = $i * $total_image_pag;
+					$end   = ($i + 1) * $total_image_pag;
+					$qu = 0;
+					$j=0;
+					foreach ($items as $key => $item){ $j++;
+						if($qu == $total_image_pag){
+							$qu = 0;
+						}
+						$qu++;
+						
+ 						if ($key >= $start && $key < $end) {?>
+					<div class="item-info" style="<?php if( $j%3 == 0 ){echo "margin-right:0;";}?>">
+						<a class="item-info-image" rel="sj_gallery_image_<?php echo $instance;?>" href="<?php echo $item['url']; ?>" title="<?php echo $item['title'] ;?>">
+							<img src="<?php echo $item['url']?>" alt="<?php echo $item['title']?>"/>
+							<span class="bg-hover"></span>
+							<span class="icon-hover"></span>
+						</a>
+						
+					</div>
+			    	<?php
+			    		$clear = 'clr1';
+			    		if ($qu % 2 == 0) $clear .= ' clr2';
+			    		if ($qu % 3 == 0) $clear .= ' clr3';
+			    		if ($qu % 4 == 0) $clear .= ' clr4';
+			    		if ($qu % 5 == 0) $clear .= ' clr5';
+			    		if ($qu % 6 == 0) $clear .= ' clr6';
+			    	?>
+	    			<div class="<?php echo $clear; ?>"></div> 					
+				<?php
+					}} ?>
+			</div>
+		<?php
+			}
+			?>
+		</div>
+	</div>
+	<?php if(!empty($options->posttext)) {  ?>
+	<div class="post-text">
+		<?php echo $options->posttext; ?>
+	</div>
+	<?php } ?>
+</div>
+
+
+<?php } else{ echo $this->__('There are no image inside folder: ') . $options->folder;}?>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function($) {
+	$('#sj_gallery_<?php echo $instance;?>').each(function(){
+		var $this = $(this), options = options = !$this.data('modal') && $.extend({}, $this.data());
+		$this.jcarousel(options);
+		$this.bind('jslide', function(e){
+			var index = $(this).find(e.relatedTarget).index();
+
+			// process for nav
+			$('[data-jslide]').each(function(){
+				var $nav = $(this), $navData = $nav.data(), href, $target = $($nav.attr('data-target') || (href = $nav.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, ''));
+				if ( !$target.is($this) ) return;
+				if (typeof $navData.jslide == 'number' && $navData.jslide==index){
+					$nav.addClass('sel');
+				} else {
+					$nav.removeClass('sel');
+				}
+			});
+
+		});
+	});
+	
+	$("a[rel=sj_gallery_image_<?php echo $instance;?>]").fancybox({
+		'transitionIn'	: '<?php echo $transition; ?>',
+		'transitionOut'	: '<?php echo $transition; ?>',
+		'titlePosition' : '<?php echo $titleposition; ?>',
+		'titleFormat'	: function(title, currentArray, currentIndex, currentOpts) {
+			return 'Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? '  - ' + title : '') + '';
+		},
+		easingIn: 'easeInOutQuad',
+		easingOut: 'easeInOutQuad',
+		onStart: function(){
+			var $btn = $('#sj_gallery_<?php echo $instance; ?>');
+			$btn.jcarousel('pause');
+		},
+		onClosed: function(){
+			var $btn = $('#sj_gallery_<?php echo $instance; ?>');
+			$btn.jcarousel('cycle');
+		}
+	});
+	
+});
+//]]>
+</script>
+

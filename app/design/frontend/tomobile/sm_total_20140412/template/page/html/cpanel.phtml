@@ -1,0 +1,198 @@
+<?php
+
+global $var_yttheme; 
+?>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/ytcpanel.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/colorpicker.js') ?>"></script>
+<script type="text/javascript">
+$jsmart(document).ready(function($){  
+    $('#colorSelector').ColorPicker({
+		color: '#0000ff',
+		onShow: function (colpkr) {
+			$(colpkr).fadeIn(500);
+			return false;
+		},
+		onHide: function (colpkr) {
+			$(colpkr).fadeOut(500);
+			return false;
+		},
+		onChange: function (hsb, hex, rgb) {
+			$('#colorSelector div').css('backgroundColor', '#' + hex);
+			$('#bd').css('background-color', '#' + hex);
+			$('#colorCode').html('#'+hex);
+			createCookie(TMPL_NAME+'_yt_themebodybgcolor', '#' + hex, 365);
+		}
+	});
+});
+function onResetDefault(tmpl_name){
+	createCookie (tmpl_name+'_tpl', '', -1);
+	createCookie (tmpl_name+'_yt_thememenu', '', -1);
+	createCookie (tmpl_name+'_yt_themecolor', '', -1);
+	createCookie (tmpl_name+'_yt_themehbgimage', '', -1);	
+	createCookie (tmpl_name+'_yt_themebodybgimage', '', -1);
+	createCookie (tmpl_name+'_yt_themefbgimage', '', -1);
+	createCookie (tmpl_name+'_yt_themebodybgcolor', '', -1);
+	createCookie (tmpl_name+'_yt_themefontfamily', '', -1);	
+	
+	if (window.location.href.indexOf ('?')>-1) window.location.href = window.location.href.substr(0,window.location.href.indexOf ('?'));
+	else window.location.reload();
+}
+</script>
+
+
+<?php 
+if(!defined('ACCORDION_SNYDERPLACE')){
+	define('ACCORDION_SNYDERPLACE', 1);
+?>
+	<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery.cookie.min.js') ?>"></script>
+	<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery.accordion_snyderplace.js') ?>"></script>
+<?php
+}
+?>
+
+<script type="text/javascript">
+    $jsmart(document).ready(function($) {
+		//syntax highlighter
+		//accordion
+		$('.ytcpanel-heading').accordion_snyderplace({
+			defaultOpen: 'ytcpanel_menutype',
+			cookieName: 'ytcpanel_accordion',
+			speed: 'fast',
+			animateOpen: function (elem, opts) { //replace the standard slideUp with custom function
+				elem.next().slideFadeToggle(opts.speed);
+			},
+			animateClose: function (elem, opts) { //replace the standard slideDown with custom function
+				elem.next().slideFadeToggle(opts.speed);
+			}
+		});
+		//custom animation for open/close
+		$.fn.slideFadeToggle = function(speed, easing, callback) {
+			return this.animate({opacity: 'toggle', height: 'toggle'}, speed, easing, callback);
+		};
+    });
+</script>
+<div id="cpanel_wrapper" style="right: -200px;">
+    <div class="cpanel-inner">
+    	<div class="yt-btn-close"></div>
+    	<!-- Label -->
+        <div class="themelabel">
+           <h3>Theme Settings</h3>
+        </div>
+        <!-- Cpanel items -->
+        <div class="cpanel-items">
+        	<div class="item even">
+            	<h3 class="ytcpanel-heading" id="ytcpanel_menutype">Menu Type</h3>
+                <div class="menu-type item-inner">
+            		<select name="ytcpanel_yt_thememenu" class="cp-select">
+                        <option value="css" <?php echo ($var_yttheme->getParam(YT_THEME_MENU)=='css')?'selected="selected"':'';?>>Css Menu</option>
+                        <option value="split" <?php echo ($var_yttheme->getParam(YT_THEME_MENU)=='split')?'selected="selected"':'';?>>Split Menu</option>
+                        <option value="mega" <?php echo ($var_yttheme->getParam(YT_THEME_MENU)=='mega')?'selected="selected"':'';?>>Mega Menu</option>
+                    </select>
+                </div>
+            </div>
+        	<div class="item odd">
+            	<h3 class="ytcpanel-heading" id="ytcpanel_themecolor">Theme Color</h3>
+                <ul>
+                    <li>
+                        <input type="radio" name="ytcpanel_yt_themecolor" id="ytcpanel_blue_style" class="cp-radio" value="blue" <?php echo ($var_yttheme->getParam('yt_themecolor')=='blue')?'checked="checked"':''; ?>/>
+                        <label for="ytcpanel_blue_style">Blue</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="ytcpanel_yt_themecolor" id="ytcpanel_green_style" class="cp-radio" value="green" <?php echo ($var_yttheme->getParam('yt_themecolor')=='green')?'checked="checked"':''; ?>/>
+                        <label for="ytcpanel_green_style">Green</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="ytcpanel_yt_themecolor" id="ytcpanel_pink_style" class="cp-radio" value="pink" <?php echo ($var_yttheme->getParam('yt_themecolor')=='pink')?'checked="checked"':''; ?>/>
+                        <label for="ytcpanel_pink_style">Pink</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="ytcpanel_yt_themecolor" id="ytcpanel_violet_style" class="cp-radio" value="violet" <?php echo ($var_yttheme->getParam('yt_themecolor')=='violet')?'checked="checked"':''; ?>/>
+                        <label for="ytcpanel_violet_style">Violet</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="item even">
+            	<h3 class="ytcpanel-heading" id="ytcpanel_headerbgimage">Header Backgroud Image</h3>
+                <div class="partern item-inner">
+                	<div class="hpartern-image hparttern1" id="hparttern1"></div>
+                    <div class="hpartern-image hparttern2" id="hparttern2"></div>
+                    <div class="hpartern-image hparttern3" id="hparttern3"></div>
+                    <div class="hpartern-image hparttern4" id="hparttern4"></div>
+                    <div class="hpartern-image hparttern5" id="hparttern5"></div>
+                    <div class="hpartern-image hparttern6" id="hparttern6"></div>
+                    <div class="hpartern-image hparttern7" id="hparttern7"></div>
+                </div>
+            </div>			
+            <div class="item odd">
+            	<h3 class="ytcpanel-heading" id="ytcpanel_bodybgimage">Background Image</h3>
+                <div class="partern item-inner">
+                	<div class="partern-image parttern1" id="parttern1"></div>
+                    <div class="partern-image parttern2" id="parttern2"></div>
+                    <div class="partern-image parttern3" id="parttern3"></div>
+                    <div class="partern-image parttern4" id="parttern4"></div>
+                    <div class="partern-image parttern5" id="parttern5"></div>
+                    <div class="partern-image parttern6" id="parttern6"></div>
+                    <div class="partern-image parttern7" id="parttern7"></div>
+                    <div class="partern-image parttern8" id="parttern8"></div>
+                    <div class="partern-image parttern9" id="parttern9"></div>
+                    <div class="partern-image parttern10" id="parttern10"></div>
+                    <div class="partern-image parttern11" id="parttern11"></div>
+                    <div class="partern-image parttern12" id="parttern12"></div>
+                </div>
+            </div>
+            <div class="item even">
+            	<h3 class="ytcpanel-heading" id="ytcpanel_footerbgimage">Footer Backgroud Image</h3>
+                <div class="partern item-inner">
+                	<div class="fpartern-image fparttern1" id="fparttern1"></div>
+                    <div class="fpartern-image fparttern2" id="fparttern2"></div>
+                    <div class="fpartern-image fparttern3" id="fparttern3"></div>
+                    <div class="fpartern-image fparttern4" id="fparttern4"></div>
+                    <div class="fpartern-image fparttern5" id="fparttern5"></div>
+                    <div class="fpartern-image fparttern6" id="fparttern6"></div>
+                    <div class="fpartern-image fparttern7" id="fparttern7"></div>
+                </div>
+            </div>				
+            <div class="item odd">
+            	<h3 class="ytcpanel-heading" id="ytcpanel_bodybgcolor">Background Color</h3>
+                <div class="item-inner">
+            		<div id="colorSelector"><div style="background-color:<?php  echo $var_yttheme->getParam(YT_THEME_BODYBGCOLOR); ?>"></div></div>
+                    <div id="colorCode"><?php echo $var_yttheme->getParam(YT_THEME_BODYBGCOLOR); ?></div>
+                </div>
+            </div>
+            <div class="item even">
+            	<h3 class="ytcpanel-heading" id="ytcpanel_fontfamily">Font Family</h3>
+                <?php 
+				$fontfamily = array(
+							 'Arial'=>'arial',
+							 'Arial Black'=>'arial-black',
+							 'Courier New'=>'courier',
+							 'Georgia'=>'georgia',
+							 'Impact'=>'impact',
+							 'Lucida Console'=>'lucida-console',
+							 'Lucida Grande'=>'lucida-grande',
+							 'Palatino'=>'palatino',
+							 'Tahoma'=>'tahoma',
+							 'Times New Roman'=>'times',
+							 'Trebuchet'=>'trebuchet',
+							 'Verdana'=>'verdana'
+				);
+				?>
+                <div class="font-family item-inner">
+            		<select name="ytcpanel_yt_themefontfamily" class="cp-select">
+					<?php foreach($fontfamily as $k=>$v):?>
+                        <option style="font-family:<?php echo $v; ?> !important; font-size:14px !important" value="<?php echo $v; ?>" <?php echo ($var_yttheme->getParam(YT_THEME_FONTFAMYLY)==$v)?'selected="selected"':'';?>><?php echo $k; ?></option>
+                    <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- Action button -->
+        <div class="action">
+            <input id="yt_button_cpanel" type="button" onclick="javascript: onApply('<?php echo $var_yttheme->template;?>');" value="Apply" class="button" />
+            <a href="#" onclick="javascript: onResetDefault('<?php echo $var_yttheme->template;?>');" class="reset">Reset</a>
+
+        </div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="yt-btn-show" style="right:0px;"></div>

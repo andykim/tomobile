@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <PRODUCT_TYPE_simple>
+        <reference name="head">
+            <action method="addCss"><stylesheet>magelynx/configurator/styles.css</stylesheet></action>
+            <action method="addJs"><script>magelynx/configurator/configurator.js</script></action>
+                        
+            <action method="addItem"><type>skin_js</type><name>jquery/jquery.min.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>jquery/jquery.noconflict.js</name><params/></action>            
+            <action method="addItem"><type>skin_js</type><name>easyzoom/easyzoom.js</name><params/></action>
+            
+            
+        </reference>
+        <reference name="product.info">
+            <block type="configurator/view" name="product.configurator" template="magelynx/configurator/view.phtml">
+                <action method="addToParentGroup"><group>detailed_info</group></action>
+                <block type="configurator/view_attributes" name="configurator.attributes" template="magelynx/configurator/view/attributes.phtml"/>
+            </block>        
+        </reference>
+    </PRODUCT_TYPE_simple> 
+    
+    <checkout_cart_index>
+        <reference name="additional.product.info">
+            <block type="configurator/checkout_cart_item_options" name="configurator.options.list" template="magelynx/configurator/checkout/cart/item/options.phtml"/>
+        </reference>
+    </checkout_cart_index>   
+    
+    <checkout_onepage_review>
+        <block type="core/text_list" name="additional.product.info" translate="label">
+            <label>Additional Product Info</label>
+            <block type="configurator/checkout_cart_item_options" name="configurator.options.list" template="magelynx/configurator/checkout/cart/item/options.phtml"/>
+        </block>        
+    </checkout_onepage_review>
+</layout>

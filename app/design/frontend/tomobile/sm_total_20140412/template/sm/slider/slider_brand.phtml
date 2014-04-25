@@ -1,0 +1,104 @@
+<?php
+/*------------------------------------------------------------------------
+ # SM Slider - Version 1.1
+ # Copyright (c) 2013 YouTech Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: YouTech Company
+ # Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+
+$options = $this->getConfigObject();
+$uniqued ='container_slider_'.rand().time();
+$smarthelper= Mage::helper('slider/utils');
+$list = $this->getImages();
+
+if(!empty($list)){
+	echo $this->getScriptTags();?>
+	<?php if(!empty($options->pretext)) { ?>
+		<div class="pre-text"><?php echo $options->pretext; ?></div>
+	<?php } ?>
+	
+	<div id="<?php echo $uniqued; ?>" class="slider-brand container-slider" style="<?php if( $options->anchor == "bottom" ){ echo "margin-bottom:40px;"; }?>">
+			<div class="page-title-slider"><?php echo $options->slider_title_text;?></div>
+			<?php if($options->anchor =="top"){?>
+			<?php if($options->button_display == 1){?>
+			<div class="page-button <?php echo $options->anchor;?> <?php echo $options->control;?>">
+				<ul class="control-button">
+					<li class="preview i-back"><span>Prev</span></li>
+					<li class="next i-next"><span>Next</span></li>
+				</ul>		
+			</div>
+			<?php }}?>
+	
+		<div class="slider not-js cols-6 <?php echo $options->deviceclass_sfx; ?>">
+			<div class="vpo-wrap">
+				<div class="vp">
+					<div class="vpi-wrap">
+					<?php foreach($list as $item){	?>				
+						<div class="item">							
+							<div class="item-wrap item-wrap-brand">								
+								<div class="item-img item-height">
+									<div class="item-img-info">
+										<a href="#">
+											<img src="<?php echo $item['url'];?>" alt="<?php echo $item['title']; ?>" title="<?php echo $item['title']; ?>" />	    				
+										</a>
+									</div>	
+								</div>									
+							</div>
+						</div>
+					<?php }?>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<?php if($options->anchor !="top"){?>
+			<?php if($options->button_display == 1){?>
+			<div class="page-button <?php echo $options->anchor;?> <?php echo $options->control;?>">
+				<ul class="control-button">
+					<li class="preview">Prev</li>
+					<li class="next">Next</li>
+				</ul>		
+			</div>
+		<?php }}?>		
+	</div>
+	
+	<?php if(!empty($options->posttext)) {  ?>
+		<div class="post-text"><?php echo $options->posttext; ?></div>
+	<?php } ?>
+	
+<?php }else {echo $this->__('Has no item to show!');}?>
+
+<script type="text/javascript">
+//<![CDATA[
+    jQuery(document).ready(function($){
+        $('#<?php echo $uniqued;?> .slider').responsiver({
+            interval: <?php echo $options->delay;?>,
+            speed: <?php echo $options->duration;?>,
+            start: <?php echo $options->start -1;?>,
+            step: <?php echo $options->scroll;?>,
+            circular: true,
+            preload: true,
+			fx: 'slide',
+            pause: 'hover',
+            control:{
+				prev: '#<?php echo $uniqued;?> .control-button li[class="preview i-back"]',
+				next: '#<?php echo $uniqued;?> .control-button li[class="next i-next"]'
+            },
+			getColumns: function(element){
+				var match = $(element).attr('class').match(/cols-(\d+)/);
+				if (match[1]){
+					var column = parseInt(match[1]);
+				} else {
+					var column = 1;
+				}
+				if (!column) column = 1;
+				return column;
+			}          
+        });
+    });
+//]]>
+</script>
+
+
+

@@ -1,0 +1,293 @@
+.tp-caption.big_orange,
+.tp-caption.medium_grey,
+.item-box-hover p.no-rating a:hover,
+.item-box-hover .actions .add-to-links li a.link-compare:hover,
+.item-box-hover .actions .add-to-links li a.link-wishlist:hover,
+.blocktabs.top-position .tabs-container ul.tabs li.sel,
+.box-main .btn-cart,ul.yt-tab-navi li.active,.cloud-zoom-lens,
+span.quantity-controls input.quantity-controls:hover,
+.block-reorder .btn-cart,.data-table .btn-cart,.product-shop .btn-cart,#yt-totop,.button,.form-button,.block-wishlist .link-cart,.block-tags .actions a,.block-poll .actions .button,.block-subscribe .actions .button,.bgcolor,
+.pagination .pages li .previous:hover,
+.pagination .pages li .next:hover,
+.more-views .next:hover,.more-views .prev:hover,
+div.popup-btn a:hover >span,
+.outer-border.border,
+.add-to-holder .add-to-cart .button:hover > span,
+.products-grid .item-inner .item-box-footer .btn-cart:hover > span,
+.sm-block-static .products-grid .item-inner .item-box-footer .btn-cart:hover > span,
+.bgcolor-hover:hover,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu .products-grid .item-inner .product-box .button.btn-cart:hover,
+#yt_content_main .col-upsell-product .block-title,
+.tp-leftarrow:hover,
+.tp-rightarrow:hover,
+.sm-basenews .basenews-title{
+	background-color: #6d6dd1;
+}
+
+#yt_header .header-top-wrap
+/*.blocktabs.top-position .tabs-container ul.tabs li:hover,
+ul.yt-tab-navi li:hover*/{
+	background: #6d6dd1;
+}
+.tp-leftarrow.round:hover,
+.tp-rightarrow.round:hover{
+	color: #FFFFFF;
+}
+
+.catalog-category-view .page-title h1,
+/*.blocktabs.top-position .tabs-container ul.tabs li.sel,
+.blocktabs.top-position .tabs-container ul.tabs li:hover,
+ul.yt-tab-navi li.active,
+ul.yt-tab-navi li:hover,*/
+.yt-product-detail .category-title-detail {
+	background: #6d6dd1;
+}
+
+.bgcolor2 {
+	background-color: #fff0f5;
+}
+
+#nav li.over>ul li.over>ul,#nav>li.over>ul,.bgcolor3 {
+	background-color: #f5f5f5;
+}
+
+.bgcolor4 {
+	background-color: #323232;
+}
+
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu li.sm_megamenu_lv1>div{
+	border-color: #6d6dd1;
+}
+#yt_header{
+	border-bottom: 5px solid #6d6dd1;
+}
+.tp-caption.big_orange, .tp-caption.medium_grey, .item-box-hover p.no-rating a:hover, .item-box-hover .actions .add-to-links li a.link-compare:hover, .item-box-hover .actions .add-to-links li a.link-wishlist:hover, .blocktabs.top-position .tabs-container ul.tabs li.sel, .box-main .btn-cart, ul.yt-tab-navi li.active, .cloud-zoom-lens, span.quantity-controls input.quantity-controls:hover, .block-reorder .btn-cart, .data-table .btn-cart, .product-shop .btn-cart, #yt-totop, .button, .form-button, .block-wishlist .link-cart, .block-tags .actions a, .block-poll .actions .button, .block-subscribe .actions .button, .bgcolor, .pagination .pages li .previous:hover, .pagination .pages li .next:hover, 
+.more-views .next:hover, .more-views .prev:hover, div.popup-btn a:hover > span, .outer-border.border, 
+.products-grid-menu  .button.btn-cart:hover > span,
+.bgcolor-hover:hover {
+    background-color: #6d6dd1;
+}
+.product_comparison .button.btn-cart,
+.block-tags .actions a, .block-poll .actions .button, 
+.block-subscribe .actions .button, .button, .form-button, .block-wishlist .link-cart {
+    background-image: url("../../images/icon-arrow-ltr.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    border: medium none;
+    display: inline-block;
+    height: 30px;
+    padding: 0 25px 0 15px;
+    transition: padding-right 0.3s ease 0s;
+}
+
+.shop-access a:hover,
+.sm-basenews.sm-basenews-basic .acd-item .acd-content .acd-description-title a:hover,
+.actions .add-to-links li a.link-compare:hover,
+.actions .add-to-links li a.link-wishlist:hover,
+.add-to-links li a.link-compare:hover,
+.add-to-links li a.link-wishlist:hover,
+.container-slider .slider .vpo-wrap .vp .item .item-wrap .item-info .item-content .item-review .no-rating a:hover,
+a.link-learn:hover,
+#nav ul li:hover >a,
+#yt_sidenav li a.subhead:hover span,
+.block-account ul li.current strong,.shop-access .nav>li>a:hover,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu_black li ul.custom li a:hover,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu .sm_megamenu_id30 .sm_megamenu_title a span,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu .sm_megamenu_id23 .sm_megamenu_title a span,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu li a.sm_megamenu_head.sm_megamenu_actived span,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu .sm_megamenu_title a:hover,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu li:hover .sm_megamenu_head,.products-grid .ratings .amount a:hover,.product-essential .ratings .rating-links a:hover,
+#crosssell-products-list .add-to-links li a:hover,
+.product-essential .add-to-links a:hover,
+.product-essential .no-rating a:hover,.no-rating a:hover,
+.link-mail:hover,.item-box-hover a.btn-cart:hover,
+.block-wishlist .price-box .price,.box .content img,
+.block .block-content img,.block.block-cart .block-content .amount a,
+#yt_containerwrap .block .block-content a:hover,
+#yt_containerwrap .block-currency .block-content  .subtotal .price,
+#yt_containerwrap .block.block-cart .block-content  .subtotal .price,.position-2 .block-content a,
+.products-grid .item-inner h2.product-name>a:hover ,
+.products-grid .item-inner .item-box-footer .item-box-footer-last .actions .add-to-links li >a:hover,
+.products-grid .item-inner .item-box-footer .item-box-footer-last .no-rating a:hover,
+.pagination .pages li.current a, .pagination .pages li:hover a,
+.toolbar-inner .view-mode .list:hover, 
+.toolbar-inner .view-mode .grid:hover,
+.toolbar-inner .view-mode > a:hover,
+.toolbar-inner .view-mode strong,
+.products-list h2.product-name a:hover,
+.products-list .ratings .amount a:hover,
+.fontcolor,
+div.popup-btn a > span,
+.catalog-listing .price-box,
+.category-products .price-box span.price,
+.price-box span.price,
+.container-slider .slider .vpo-wrap .vp .item .item-wrap .item-info .item-content .item-price,
+.topsl2-wrap  ul li:hover a,
+#yt_footer .location .location-line-des a:hover,
+.block-wishlist .product-name a:hover,
+#cart-sidebar .product-name a:hover,
+.account-box .head a:hover,
+.my-account .box-head a:hover,
+.my-account .box-info a:hover,
+.back-link a:hover,
+.checkout-onepage-success .yt-content-main p a:hover, 
+.cart-empty p a:hover,
+.my-account .product-name a:hover,
+.link-edit:hover,
+.blocktabs .item-wrap .item-title a:hover,
+.yt-rightcol-slideshow .products-grid .item-inner .item-box .product-box .product-name a:hover,
+.container-slider .slider .vpo-wrap .vp .item .item-wrap .item-info .item-content .item-review .rating-links a:hover,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu li div:hover > a > span,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu .sm_megamenu_content .container-slider .slider .vpo-wrap .vp .item .item-wrap .item-title a:hover,
+#nav > li li.active > a, 
+#nav > li.over li a:hover,
+.mini-cartpro .block-content .bottom-action .subtotal .price,
+.sm-cartpro .price,.block-cart .subtotal .price,
+.about-us .about-us-image .title-image-about,
+.menu-basic-two .menu-basic-two-item .menu-basic-two-info .menu-basic-two-price,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu .sm_megamenu_content .container-slider.fashion-slider .slider .vpo-wrap .vp .item .item-wrap .item-title a:hover,
+.menu-basic-two .menu-basic-two-item .menu-basic-two-info .menu-basic-two-title:hover > a,
+.about-us .about-us-image .download-image-about:hover a,
+.menu-basic .menu-basic-item .menu-basic-title:hover a,
+.yt-info a:hover,.yt-copyright a:hover,
+.container-slider .slider .vpo-wrap .vp .item .item-wrap .item-info .item-content .addcart-slider a > .addcart-text,
+.add-to-holder .add-to-cart .button:hover span > span,
+.block-layered-nav dd li:hover,
+#yt_sidenav li:hover,
+.products-grid .item-inner .item-box-footer .btn-cart:hover,
+.products-grid-menu .product-name a:hover,
+.products-grid-menu  .button.btn-cart:hover span > span,
+.container-slider.fashion-slider .slider .vpo-wrap .vp .item .item-wrap .item-des > a{
+	color: #6d6dd1;
+}
+.yt-copyright a:hover{
+	color: #6d6dd1 !important;
+}
+.login-quick .more-actions a:hover {
+    color: #FFFFFF;
+}
+#yt_containerwrap .block .block-content a.btn-remove.btn-compare:hover{
+	transition: all 0s ease-in-out 0s;
+	-moz-transition: all 0s ease-in-out 0s;
+	-webkit-transition: all 0s ease-in-out 0s;
+	-o-transition: all 0s ease-in-out 0s;
+}
+.shop-access .li-add .login-quick,
+.shop-access .li-add .login-quick:hover,
+.mini-cartpro .block-content{
+	border-top: 3px solid #6d6dd1;
+}
+.yt-info ul li:hover a {
+	border-bottom: 1px solid #6d6dd1;
+	color: #6d6dd1;
+	-moz-transition: all 0.3s ease-in-out 0s;
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	-o-transition: all 0.3s ease-in-out 0s;
+	-ms-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+
+.sj-gallery .sj-navigation .sj-buttons .sj-prev:hover, 
+.sj-gallery .sj-navigation .sj-buttons .sj-next:hover,
+.sj-gallery-brand.sj-gallery .sj-prev:hover, 
+.sj-gallery-brand.sj-gallery .sj-next:hover,
+.container-slider .page-button.top .control-button .next:hover,
+.container-slider .page-button.top .control-button .preview:hover,
+.group-select .legend,.fieldset .legend,
+.yt-rightcol-slideshow .products-grid .item-inner .item-box .product-box .btn-cart:hover,
+.block-topsl .block-follow  ul li:hover,
+.container-slider .slider .vpo-wrap .vp .item .item-wrap .item-info .item-content .addcart-slider a:hover > .icon-shopping-cart,
+.about-us .about-us-under .about-us-under-item:hover .about-us-under-item-bg,
+#yt_footer .block-follow ul li:hover,
+.sm-basenews .acd-item:hover  .basenews-date{
+    background-color: #6d6dd1;
+	color: #fff;
+	-moz-transition: all 0.3s ease-in-out 0s;
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	-o-transition: all 0.3s ease-in-out 0s;
+	-ms-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+.container-slider .slider .vpo-wrap .vp .item .item-wrap .item-info .item-content .addcart-slider a:hover{
+	width: auto;
+	margin-left: 0;
+	transition: all 0.5s ease-in-out 0s;
+	-moz-transition: all 0.5s ease-in-out 0s;
+	-webkit-transition: all 0.5s ease-in-out 0s;
+	-o-transition: all 0.5s ease-in-out 0s;
+}
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu li a.sm_megamenu_head.sm_megamenu_top_actived,
+#nav > li.active > a{
+	border: 1px solid #6d6dd1;
+	border-bottom: none;
+}
+#nav > li.active > a,
+#nav > li.over > a{
+	color: #6d6dd1;
+}
+.product-img-box .more-views li a.actived > img,
+.product-img-box .more-views li a:hover > img {
+	border: 1px solid #6d6dd1;
+}
+.topsl2-wrap  ul li:hover{
+	background: url("../../images/blue/start-footer-hover.png") no-repeat 1px 15px;
+}
+#yt_mainnav ul#nav ul li.parent:hover > a:before { 
+	background: url("../../images/blue/sub_menu_arrow.png") no-repeat;
+}
+@media (max-width: 767px) {
+	#yt_header .header-nav-inner{
+		background: url("../../images/blue/mobile-menu.png") no-repeat scroll right center #fff;
+		border: 1px solid #6d6dd1;
+		margin-bottom: 20px;
+		height: 35px;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+	}
+	#yt_header  .sm-megamenu-hidden{
+		width: 120%;
+		padding-right: 20%;
+	}
+	#yt_header  .sm-megamenu-hidden  #yt-mobilemenu {
+		background: transparent;
+		border: none;
+	}
+	#yt_header .sm_megamenu_wrapper_horizontal_menu {
+		background: none repeat scroll 0 0 #6d6dd1;
+		border: 1px solid #6d6dd1;
+		margin-bottom: 20px;
+	}
+	#yt_header .sambar .btn-sambar .icon-bar {
+		background-color: #6d6dd1;		
+	}
+	#yt_header .sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu li:hover a.sm_megamenu_head{
+		color: #6d6dd1;	
+	}
+}
+
+#yt_footer .location .location-line-image:hover,
+#yt_footer .services .services-content-image:hover {
+	background: #6d6dd1;
+	-moz-transition: all 0.3s ease-in-out 0s;
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	-o-transition: all 0.3s ease-in-out 0s;
+	-ms-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+.yt-col .block .block-title{
+	background: #6d6dd1;
+}
+.sm_megamenu_wrapper_horizontal_menu  ul.sm_megamenu_menu > li.sm_megamenu_drop.sm_megamenu_actived > a > span > .sm_megamenu_title,
+.sm_megamenu_wrapper_horizontal_menu  ul.sm_megamenu_menu > li.sm_megamenu_drop:hover > a > span > .sm_megamenu_title,
+#nav > li.parent:hover > a > span{
+	background: url("../../images/blue/bg-drop-hover.png") no-repeat scroll right 6px transparent;
+}
+#nav > li.parent:hover > a > span,
+#nav > li.active.parent > a > span, #nav > li.over.parent > a > span{
+	background: url("../../images/blue/bg-drop-hover.png") no-repeat scroll right 3px transparent;
+}
+
+
+
+

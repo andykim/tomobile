@@ -1,0 +1,154 @@
+<?php
+/*------------------------------------------------------------------------
+ # SM Block Tabs - Version 1.0
+ # Copyright (c) 2013 YouTech Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: YouTech Company
+ # Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+
+	$_productCollection = $this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+    $imgWidth = $this->product_image_width;
+    $imgHeight = $this->product_image_height > 0 ? (int)$this->product_image_height : null;
+    if ($imgWidth <= 0){
+    	$this->product_image_disp = false;
+    }
+	
+    $blocktabs_grid_cols = Mage::getStoreConfig('blocktabs_cfg/general/num_columns');
+    $blocktabs_grid_cols = $blocktabs_grid_cols>0 ? $blocktabs_grid_cols : 3;
+    $blocktabs_grid_rows = Mage::getStoreConfig('blocktabs_cfg/general/num_rows');
+    $blocktabs_grid_rows = $blocktabs_grid_rows>0 ? $blocktabs_grid_rows : 2;
+    $nb_products = $_productCollection->count();
+    ?>
+<?php if( !$nb_products ): ?>
+<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else: ?>
+<div class="items-container no-js">
+	<div class="items-container-inner">
+		<?php
+		$i = 0;
+		$newline = true;
+		$perpage = ceil( $nb_products/($blocktabs_grid_rows*$blocktabs_grid_cols) );
+		$onepage = $blocktabs_grid_rows*$blocktabs_grid_cols;
+		$oneline = $blocktabs_grid_cols;
+		foreach($_productCollection as $_product):
+			$i++;
+		?>
+		
+		<?php if ($newline){ ?>
+		<div class="items-grid cols-<?php echo $blocktabs_grid_cols; ?>">
+		<?php
+			$newline = false;
+		} ?>
+		<div class="item clearfix">
+			<div class="item-wrap">
+				<?php if ($this->product_image_disp): ?>
+				<div class="item-image">
+					<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($imgWidth, $imgHeight); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+				</div>
+				<?php endif; ?>
+				
+				<?php if ($this->product_title_disp): ?>
+				<div class="item-title">
+					<?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+					<?php
+						if ( $this->product_title_max_length > 0){
+							$_productNameTruncated = Mage::helper('core/string')->truncate($_productNameStripped, $this->product_title_max_length);
+						}
+					?>
+                    <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>"><?php echo isset($_productNameTruncated) ? $_productNameTruncated : $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a></h3>
+				</div>
+				<?php endif; ?>
+				<?php if ($this->product_description_disp): ?>
+				<div class="item-description">
+                	<?php
+                		$product_description_src = in_array($this->product_description_src, array('short_description', 'description')) ? $this->product_description_src : 'short_description';
+                		$product_description = $_helper->productAttribute($_product, $_product->$product_description_src, $product_description_src);
+                		
+                		if ( $this->product_description_strip_tags ){
+							$allow_tags = $this->product_description_keep_tags ? $this->product_description_keep_tags : null;
+							$product_description = $this->stripTags( $product_description,  $allow_tags, true);
+						}
+						
+						if ( $this->product_description_max_length > 0){
+							$product_description = Mage::helper('core/string')->truncate($product_description, (int)$this->product_description_max_length);
+						}
+						
+						echo $product_description;
+                	?>
+                	<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('Learn More') ?></a>
+              	</div>
+				<?php endif; ?>
+				
+				<?php
+				if( $this->product_rating_summary ){
+					Mage::getModel('review/review')->getEntitySummary($_product, Mage::app()->getStore()->getId());
+					if ( $_product->getRatingSummary() ){
+						echo $this->getReviewsSummaryHtml($_product);
+					}
+				} ?>
+				
+				<?php if ($this->product_price_disp): ?>
+				<?php echo $this->getPriceHtml($_product, true) ?>
+				<?php endif; ?>
+				
+				<div class="actions">
+				
+					<?php if ($this->product_cart_or_status): ?>
+	                    <?php if($_product->isSaleable()): ?>
+	                        <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+	                    <?php else: ?>
+	                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+	                    <?php endif; ?>
+                    <?php endif; ?>
+                    
+                    <ul class="add-to-links">
+                        <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                            <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('add to wishlist') ?></a></li>
+                        <?php endif; ?>
+                        <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+                            <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('add to compare') ?></a></li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+			</div>
+		</div>
+		<?php if ($oneline==1 || $i%$oneline==0) {
+			echo '<div class="clear"></div>';
+		}?>
+		<?php if ($onepage==1 || $i%$onepage==0 || $i==$nb_products){
+			?>
+		</div>
+			<?php
+			$newline = true;
+		} ?>
+		<?php endforeach; ?>
+	</div>
+</div>
+<!--
+<div class="blocktabs-slider clearfix">
+	<?php
+	$i = 0;
+	$newline = true;
+	$oneline = ceil( $nb_products/($blocktabs_grid_rows) );
+	foreach($_productCollection as $_product):
+		$i++;
+	?>
+	
+	<?php if ($newline){ ?>
+	<ul class="clearfix products view<?php echo $blocktabs_grid_cols>1 ? '-grid cols-'.$blocktabs_grid_cols : '-list'; ?>">
+	<?php
+		$newline = false;
+	} ?>
+		
+		<?php if ($oneline==1 || $i%$oneline==0 || $i==$nb_products){
+			?>
+	</ul>
+			<?php
+			$newline = true;
+		} ?>
+	<?php endforeach; ?>
+</div>
+ -->
+<?php endif; ?>

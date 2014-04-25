@@ -1,0 +1,39 @@
+<?php
+    $attribute = $this->getAttribute();    
+    $is_color = $this->isColorAttribute();    
+?>
+
+<h3 class="section-head <?php echo $is_color ? "colors" : ''?>" style="<?php echo $is_color ? "display:none;" : ''?>"><a href="#"><?php echo $attribute->getFrontendLabel(); ?></a></h3>
+<div class="section-content <?php echo $is_color ? "colors" : ''?>" style="<?php echo $is_color ? "display:none;" : ''?>">
+    <?php if($is_color): ?>
+    <h3><?php echo $this->__('Move cursor over image to select detail'); ?></h3>
+    <?php endif; ?>
+    <ul class="options" id="item<?php echo $attribute->getAttributeId() ?>">
+
+        <?php $option_collection = $this->getOptionCollection(); ?>
+        
+        <?php foreach($option_collection->getItems() as $option):?>
+            <?php $options_config[$attribute->getAttributeId()] = $option_collection->toArray(); ?>
+
+            <li class="item <?php if($this->isActive($option)): ?>active<?php endif;?>" id="option<?php echo $option->getOptionId(); ?>">
+                <img src="<?php echo $option->getSwatchUrl(50,50); ?>" alt="<?php echo $this->__($option->getValue()) ?>" title="<?php echo $this->__($option->getValue()) ?>"/>
+            </li>
+
+        <?php endforeach; ?>
+
+    </ul>
+</div>
+<?php/*
+<div class="<?php echo $attribute->getFrontendLabel(); ?>">
+    <label><?php echo $attribute->getFrontendLabel(); ?></label>
+    <?php $option_collection = $this->getOptionCollection(); ?>
+    <?php if($option_collection->count()): ?>
+        <select id="attr_<?php echo $attribute->getAttributeId() ?>">
+            <option value="">--Please select--</option>
+            <?php foreach($option_collection->getItems() as $option):?>
+                <?php $options_config[$attribute->getAttributeId()] = $option_collection->toArray(); ?>
+                <option value="<?php echo $option->getOptionId(); ?>" <?php if($this->isActive($option)): ?>selected<?php endif;?>><?php echo $option->getValue() ?></option>
+            <?php endforeach; ?>                
+        </select>
+    <?php endif; ?>
+</div>*/?>

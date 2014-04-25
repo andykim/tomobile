@@ -1,0 +1,90 @@
+<?php
+/*------------------------------------------------------------------------
+ # SM Block Tabs - Version 1.0
+ # Copyright (c) 2013 YouTech Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: YouTech Company
+ # Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+
+$instance	= rand().time();
+$tabs = $this->getChild();
+if ( count($tabs) ){
+	$tab_selected = $this->tab_selected <= count($tabs)? $this->tab_selected : 1;
+	$tab_selected = $content_selected = $tab_selected > 0 ? $tab_selected : 1;
+	
+	$jsHelper = Mage::helper('core/js');
+	$jquery = $jsHelper->includeSkinScript('sm/blocktabs/js/jquery-1.5.min.js');
+	$jsmart = $jsHelper->includeSkinScript('sm/blocktabs/js/jsmart.noconflict.js');
+	$jsease = $jsHelper->includeSkinScript('sm/blocktabs/js/jsmart.easing.1.3.js');
+	$jstabs = $jsHelper->includeSkinScript('sm/blocktabs/js/jsmart.tabs.js');
+	if (null == Mage::registry('jsmart.jquery')){
+		// jquery has not added yet
+		if ( $this->include_jquery ){
+			// if module allowed jquery.
+			echo $jquery;
+			Mage::register('jsmart.jquery', 1);
+		}
+	}
+	echo $jsmart.$jsease.$jstabs;
+?>
+<script>
+	$jsmart(document).ready(function($){
+		$('.blocktabs').each(function(){
+			var $this = $(this), $istabs = $this.data('tabs');
+			if ( !$istabs ){
+				$this.tabs();
+				$this.data('tabs', 1);
+			}
+		});
+		
+	});
+	/*
+	$jsmart(window).load(function(){
+		var height = $jsmart('#yt_content_top .tabs-content-inner').outerHeight();
+		$jsmart('#yt_content_top .tab-content').css({'height':height});
+		$jsmart('#yt_content_top .container-slider .vp .item.item-top').css({'height':height-45});
+		var height_wrap = $jsmart('#yt_content_top .container-slider .vp .item.item-top').height();
+		var height_wp = $jsmart('#yt_content_top .container-slider .vp .item.item-top .item-wrap-top').height();
+		if( height_wrap < height_wp ){
+			$jsmart('#yt_content_top .container-slider .vp .item.item-top').css({'height':height_wp});
+		}
+		$jsmart('#yt_content_top .container-slider .vp').css({'height':height_wrap});
+		console.log(height_wrap);
+		console.log(height_wp);
+	});
+	*/
+	$jsmart(window).load(function(){
+		height = $jsmart('.tabs-content-inner').outerHeight();
+		$jsmart('#yt_content_top .tab-content').css({'height':height});
+		$jsmart('.container-slider .vp .item.item-top ').css({'height':height-35});
+		$jsmart('.container-slider .vp.vp-first').css({'height':height-35});
+	});
+</script>
+<div class="blocktabs top-position">
+	<div class="tabs-container">
+		<ul class="tabs">
+			<?php $i = 0; ?>
+			<?php foreach($tabs as $name => $block): ?>
+			<li<?php if (++$i==$tab_selected) echo ' class="sel"'; ?>><div class="tab font3"><?php echo $block->block_title ? $block->block_title : $this->__($name); ?></div></li>
+			<?php endforeach; ?>
+		</ul>
+	</div>
+	<div class="tabs-content">
+		<div class="tabs-content-inner">
+			<?php $i = 0; ?>
+			<?php foreach($tabs as $name => $block): ?>
+			<div class="tab-content<?php if (++$i==$content_selected) echo ' sel'; ?>">
+				<?php echo $this->getChildHtml($name); ?>
+			</div>
+			<?php endforeach; ?>
+		</div>
+	</div>
+	<div class="slider-control">
+		<ul>
+			<li class="prev">Prev</li>
+			<li class="next">Next</li>
+		</ul>
+	</div>
+</div>
+<?php } ?>

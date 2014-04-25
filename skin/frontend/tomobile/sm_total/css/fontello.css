@@ -1,0 +1,122 @@
+@font-face {
+	font-family: 'fontello';
+	src: 	url("font/fontello.eot");
+	src: 	url("font/fontello.eot?#iefix") format('embedded-opentype'), 
+			url("font/fontello.woff") format('woff'), 
+			url("font/fontello.ttf") format('truetype'), 
+			url("font/fontello.svg#fontello") format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+#yt_content_main .col-upsell-product .block-title strong:before,
+.tp-caption.big_orange:before,
+.box-main .add-to-links li a:before, 
+.i-next:before ,
+.i-back:before ,
+.i-mail:before,
+.i-cancel-circle:before,
+.i-ok-circle:before,
+#crosssell-products-list .add-to-links li a:before, 
+.product-essential .add-to-links li a:before,
+.products-list .product-shop .add-to-links li a:before,
+.topsl2-wrap .block-user1 .block-content ul li a:before,
+.topsl2-wrap .block-user2 .block-content ul li a:before,
+.topsl2-wrap .block-user3 .block-content ul li a:before,
+.position-4:after,
+#nav > li.active li a span:before, #nav > li.over li a span:before, 
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu ul.custom li a span:before,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu .sm_megamenu_title a.sm_megamenu_nodrop span:before,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu .sm_megamenu_id30 .sm_megamenu_title a span:before,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu .sm_megamenu_id23 .sm_megamenu_title a span:before,
+.block-yt-layered-nav li a span:before, 
+.icon-dot:before,
+.btn-edit:before,
+.btn-remove:before,
+.toolbar-inner .list:before,
+.toolbar-inner .grid:before,
+.icon-pencil:before ,
+.icon-cancel-circle:before ,
+.yt-col .block .block-title strong:before,
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+	background:none;
+	vertical-align: inherit;  
+	font-family: 'fontello';
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	text-align: center;
+	line-height: 1em;
+}
+.i-next:before {
+	/*width: 22px;*/
+}
+.box-main .add-to-links li a:before, 
+.product-essential .add-to-links li a:before,
+.products-list .product-shop .add-to-links li a:before,
+.topsl2-wrap .block-user1 .block-content ul li a:before,
+.topsl2-wrap .block-user2 .block-content ul li a:before,
+.topsl2-wrap .block-user3 .block-content ul li a:before,
+.icon-plus:before { /*content: '\2b '; */} /* '+' */
+.icon-plus-circle:before { content: '\e758'; } /* '' */
+.toolbar-inner .list:before  ,
+.icon-list:before { content: '\e760'; } /* '' */
+.toolbar-inner .grid:before ,
+.icon-grid:before { content: '\e761'; } /* '' */
+
+
+/*.btn-edit:before,*/
+.icon-pencil:before { content: '\e762'; } /* '' */
+/*.btn-remove:before,*/
+.i-cancel-circle:before,
+.icon-cancel-circle:before { content: '\e763'; } /* '' */
+.btn-compare.btn-remove:before{
+	content: '';
+}
+#nav > li.active li a span:before, #nav > li.over li a span:before, 
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu ul.custom li a span:before,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu .sm_megamenu_title a.sm_megamenu_nodrop span:before,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu .sm_megamenu_id30 .sm_megamenu_title a span:before,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu .sm_megamenu_id23 .sm_megamenu_title a span:before,
+.icon-dot:before {  
+	content:'\e764';
+	width: 30px;
+	margin-left:-10px;
+	font-size: 11px;
+}
+.icon-triangle-down:before {  content:'\e765'; } /* '' */
+.position-4:after {  /*font-size:14px;		white-space:nowrap;		content:'\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765\e765'; 
+*/
+} /* '' */
+.i-mail:before,
+.icon-mail:before { content: '\e766'; } 
+
+.i-ok-circle:before,
+.icon-ok-circle:before { content: '\e767'; }
+.i-next:before {	
+	/*content: '\e768';	*/
+}
+.i-back:before {	
+	/*content: '\e769';	*/
+}	
+.i-next:before,
+.i-back:before{
+	display: inline-block;
+	/*line-height: 89%;*/
+}
+.toolbar-inner .list:before,
+.toolbar-inner .grid:before{
+	display: inline-block; 
+	text-align: left;
+	width: 20px;
+}
+.yt-col .block .block-title strong:before,
+#yt_content_main .col-upsell-product .block-title strong:before,
+.icon-triangle:before {
+	content: '\e759'; 
+	font-size: 14px;
+	width: 25px;
+}

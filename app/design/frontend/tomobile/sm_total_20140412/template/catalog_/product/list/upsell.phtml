@@ -1,0 +1,117 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php if(count($this->getItemCollection()->getItems())): ?>
+<div class="box-collateral box-up-sell">
+    <!--h2><?php //echo $this->__('You may also be interested in the following product(s)') ?></h2-->
+	<div class="block-title">
+		<strong>Up-sell products</strong>
+	</div>
+    <div class="up-sell-products">
+    <?php  $this->setColumnCount(3); // uncomment this line if you want to have another number of columns. also can be changed in layout ?>
+    <?php $this->resetItemsIterator() ?>
+    <?php for($_i=0;$_i<$this->getRowCount();$_i++): ?>
+        <div class="products-grid" <?php /*class="products-grid" */?>>
+			<div class="row-fluid">
+        <?php for($_j=0;$_j<$this->getColumnCount();$_j++): ?>
+            <?php if($_link=$this->getIterableItem()): 
+				$now = date("Y-m-d");
+				$newsFrom= substr($_link->getData('news_from_date'),0,10);
+				$newsTo=  substr($_link->getData('news_to_date'),0,10);
+				$specialprice = Mage::getModel('catalog/product')->load($_link->getId())->getSpecialPrice();
+				$isBestProduct =($_link->getResource()->getAttribute('best') AND $_link->getResource()->getAttribute('best')->getFrontend()->getValue($_link)=="Yes")?$_link->getResource()->getAttribute('best')->getFrontend()->getValue($_link):'';
+				$this->_reviewsHelperBlock = $this->getLayout()->createBlock('review/helper');
+			?>
+				<div class="span12" data-normal="span12" data-tablet="span12" data-stablet="span12">
+					<div class="item <?php if( $_j == 0 ) echo ' first';?>">
+						<div class="item-inner bgcolor2-hover">										
+							<div class="item-box">
+								<?php
+								//if ($now>=$newsFrom && $now<=$newsTo){
+									//echo "<span class='newproduct-grid'>new</span>";
+								//}
+								//if ($specialprice){
+									//echo "<span class='saleoff-grid'>sale off</span>";
+								//}
+								?>
+								<div class="product-image">
+									<a class="" href="<?php echo $_link->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_link, 'small_image'), null, true) ?>" ><img src="<?php echo $this->helper('catalog/image')->init($_link, 'small_image')->resize(250,167); ?>" width="250" height="167" alt="<?php echo $this->stripTags($this->getImageLabel($_link, 'small_image'), null, true) ?>" /></a>
+									<!--div class="item-box-hover ">
+										<a class="readmore fontcolor" href="<?php //echo $_link->getProductUrl() ?>" title="<?php //echo $this->stripTags($this->getImageLabel($_link, 'small_image'), null, true) ?>"><i class="icon-plus-circle"></i><span class="bgmask"></span></a>
+										<?php //if($_link->getRatingSummary()): ?>            
+											<?php //echo $this->getReviewsSummaryHtml($_link, 'short', true) ?>
+										<?php //endif; ?>						
+										<div class="actions">
+											<ul class="add-to-links">
+												<?php //if ($this->helper('wishlist')->isAllow()) : ?>
+													<li><a href="<?php //echo $this->helper('wishlist')->getAddUrl($_link) ?>" class="link-wishlist"><?php //echo $this->__('Add to Wishlist') ?></a></li>
+												<?php //endif; ?>
+												<?php //if($_compareUrl=$this->getAddToCompareUrl($_link)): ?>
+													<li><a href="<?php //echo $_compareUrl ?>" class="link-compare"><?php //echo $this->__('Add to Compare') ?></a></li>
+												<?php //endif; ?>
+											</ul>
+										</div>
+									</div-->								
+								</div>
+								<?php //echo $this->getPriceHtml($_link, true) ?>
+							</div>
+							<div class="item-box-footer">
+								<div class="item-box-footer-left">
+									<h2 class="product-name">
+										<a class="" href="<?php echo $_link->getProductUrl() ?>" title="<?php echo $this->stripTags($_link->getName(), null, true) ?>">
+										<?php 
+										if(strlen($_helper->productAttribute($_link, $_link->getName(), 'name')) > 22){
+											echo substr($_helper->productAttribute($_link, $_link->getName(), 'name'), 0, 22) .' ...';
+										}else{
+											echo $_helper->productAttribute($_link, $_link->getName(), 'name');
+										}?>
+										</a>
+									</h2>									
+								</div>
+								<?php echo $this->getPriceHtml($_link, true) ?>
+								<div class="item-box-footer-right">
+									<?php if($_link->isSaleable()): ?>
+										<a title="<?php echo $this->__('add to cart') ?>" href="javascript:void(0);" class="btn-cart bgcolor fontcolor" onclick="setLocation('<?php echo $this->getAddToCartUrl($_link) ?>')"><span><span class="icon-plus"><?php echo $this->__('add to cart') ?></span></span></a>
+									<?php else: ?>
+										<span class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></span>
+									<?php endif; ?>		
+								</div>
+							</div>
+							<span class="inner-border border-hover"></span>
+						</div>
+					</div>
+				</div>
+            <?php else: ?>
+            <?php endif; ?>
+        <?php endfor; ?>
+			</div>
+        </div>	<?php //end div class="product-grid" ?>
+    <?php endfor; ?>
+    </div>
+   <!-- <script type="text/javascript">decorateTable('upsell-product-table')</script>-->
+</div>
+<?php endif ?>

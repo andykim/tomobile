@@ -1,0 +1,21 @@
+<config>
+    <menu>
+        <configurator translate="title" module="configurator">
+            <title>Configurator</title>
+            <sort_order>100</sort_order>
+            <children>
+                <layers translate="title">
+                    <title>Manage layers</title>
+                    <action>configurator/adminhtml_layer</action>
+                    <sort_order>0</sort_order>
+                </layers>
+
+                <cache translate="title">
+                    <title>Manage cache</title>
+                    <action>configurator/adminhtml_cache</action>
+                    <sort_order>1</sort_order>
+                </cache>
+            </children>
+        </configurator>
+    </menu>    
+</config>

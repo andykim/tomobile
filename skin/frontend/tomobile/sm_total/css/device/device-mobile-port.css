@@ -1,0 +1,320 @@
+/******************************************
+***          YT Framework: CSS          ***
+*******************************************/
+/* *******     max-width:479px    ******* */
+body .yt-main {
+    width: 100%;
+    max-width: 690px;
+}
+body.fs1 #yt_wrapper {
+  font-size: 1.1em !important;
+}
+
+body.fs2 #yt_wrapper {
+  font-size: 1.2em !important;
+}
+
+body.fs3 #yt_wrapper {
+  font-size: 1.3em !important;
+}
+
+body.fs4 #yt_wrapper{
+  font-size: 1.4em !important;
+}
+
+body.fs5 #yt_wrapper {
+  font-size: 1.5em !important;
+}
+
+body.fs6 #yt_wrapper {
+  font-size: 1.7em !important;
+}
+
+#yt_col1,
+#content_main,
+#content_left,
+#yt_col2{
+	width:100% !important;
+}
+#user3,
+#user4,
+#user5,
+#user6,
+#usera,
+#userb,
+#userc,
+#userd,
+#user10,
+#user11,
+#user12,
+#user13,
+#user14
+{
+	width:100% !important;
+}
+.masonry-brick.grid-05,
+.masonry-brick.grid-1,
+.masonry-brick.grid-2,
+.masonry-brick.grid-3{
+	width:100% !important;
+}
+
+.hide-mobile-port {
+	display: none !important;
+	height: 0px !important;
+}
+#cpanel_btn {
+	display: none;
+}
+/* ----------------------------*/
+/*     Block: yt_header        */
+/* ----------------------------*/
+#yt_header .yt-main{
+	height:75px;
+}
+#yt_header h1.logo{
+	float:none;
+	margin:20px auto 0;
+	width:67px;
+}
+#yt_topwrap .yt-logo {
+
+}
+.rtl #yt_topwrap .yt-logo {
+	float: right !important;
+	padding: 25px 20px 0 0px;
+}
+#yt_header h1.logo a {
+	background:url(../images/logo_mobileport.png) no-repeat top left;
+    display: block;
+    height: 38px;
+    width: 67px;
+}
+#yt_header h1.logo a img{
+	display:none;
+}
+
+ul.yt-login-regis li a.login-switch {
+    background:url(../images/m_login.gif) no-repeat left top;
+	width:25px;
+	height:25px;
+	text-indent:-999em;
+	padding:0 0;
+}
+ul.yt-login-regis li a.register-switch {
+	background:url(../images/m_regis.gif) no-repeat left top;
+    width:25px;
+	height:25px;
+	text-indent:-999em;
+	padding:0 0;
+}
+ul.yt-login-regis .show-box{
+	top:26px;
+}
+ul.yt-login-regis {
+	margin:28px 0 0;
+}
+#yt_topwrap .yt-main {
+    height: 125px;
+}
+#yt_topwrap #top1 {
+	left: 20px;
+	display: none;
+}
+.rtl #yt_topwrap #top1 {
+    left: auto;
+    right: 20px;
+}
+.rtl #yt_topwrap #top2 {
+    left: auto;
+    right: 20px;
+}
+#yt_topwrap #top2 {
+	bottom: -35px;
+    right: 20px;
+    z-index: 999;
+}
+/* ----------------------------*/
+/*     Block: Component      */
+/* ----------------------------*/
+/* ***   Smart Search   *** */
+#finder-search .word > *,
+#yt_component #searchForm .word > * {
+	display: block;
+	margin: 5px 0;
+}
+#yt_component #searchForm 
+/* ----------------------------*/
+/*     Block: yt_menuwrap      */
+/* ----------------------------*/
+#yt_menuwrap .yt-menu{
+	/*display:none;*/
+}
+#yt_menuwrap #nav2 .finder,
+#yt_menuwrap #nav2 .search{
+	padding:10px;
+}
+#yt_searchcustom{
+
+}
+#yt_searchcustom .btn-seach{
+
+}
+#yt_searchcustom form{
+
+}
+#yt_searchcustom .btn-seach,
+#yt_searchcustom form{
+
+}
+#yt_searchcustom:hover .btn-seach{
+	background:#FFF url(../images/search-btn.png) no-repeat center center;
+	display:block;
+}
+#yt_searchcustom:hover form{
+	display:block;
+}
+#top2 #yt_searchcustom .inputbox {
+	width: 120px;
+}
+#top2 #yt_searchcustom .inputbox:focus {
+	width: 140px;
+}
+#yt_menuwrap {
+    padding-bottom: 10px;
+}
+/* ----------------------------*/
+/*     Block: yt_spotlight1    */
+/* ----------------------------*/
+
+/* ----------------------------*/
+/*     Block: yt_spotlight3    */
+/* ----------------------------*/
+#yt_spotlight3 #user10,
+#yt_spotlight3 #user11,
+#yt_spotlight3 #user12,
+#yt_spotlight3 #user13 {
+	height: auto !important;
+	padding: 0 0 20px;
+}
+/* ----------------------------*/
+/*     Block: content          */
+/* ----------------------------*/
+#yt_component{
+	width:100%;
+}
+#left1,
+#left2,
+#right1,
+#right2{
+	width:49.9% !important;
+}
+.cols-2 .item{
+	width:100% !important;
+}
+.cols-2 .column-2 .item-inner{
+	padding:0 0;
+}
+/* ----------------------------*/
+/*     Block: yt_footer1       */
+/* ----------------------------*/
+.group-footnav{
+	display:none;
+}
+.yt-copyright{
+	width:100% !important;
+	text-align:center;
+}
+#description_toolbargroup {
+	display: none;
+}
+/* ----------------------------*/
+/*     Registration Form       */
+/* ----------------------------*/
+#recaptcha_table tr > td + td + td {
+	display: none;
+}
+/* ***     registration form     *** */
+.k2AccountPage div.admintable {
+	width: 100%;
+}
+.k2AccountPage div.admintable fieldset.key label {
+    float: none;
+}
+
+#yt_slideshow {
+	display: none;
+}
+/* ----------------------------*/
+/*     Search Form       */
+/* ----------------------------*/
+#top2 #yt_searchcustom {
+    height: 35px;
+    width: 35px;
+}
+#top2 #yt_searchcustom .inputbox {
+	background: #FFFFFF !important;
+    border: 5px solid #EC534D;
+    color: #333333;
+    padding: 0 5px;
+}
+#yt_searchcustom form {
+	display: none;
+	position: relative;
+}
+#yt_searchcustom:hover form {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 35px;
+}
+#top2 #yt_searchcustom .inputbox {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+#yt_searchcustom .btn-seach {
+	background: url("../images/search-btn.png") no-repeat scroll center center #FFFFFF;
+    display: block;
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top:1px;
+    right:0;
+}
+.item-link a {
+	display: block;
+	width:120px;
+}
+.breadcrumbs {
+
+}
+.breadcrumbs > * {
+	display: inline-block;
+}
+#yt_searchcustom:hover .btn-seach {
+    background: url("../images/search-btn-ov.png") no-repeat scroll center center #FFFFFF;
+    display: block;
+}
+#yt_searchcustom:hover .btn-seach {
+	background-color: #EC534D;
+}
+#top2 #yt_searchcustom .button {
+	display: none;
+}
+#yt-mobilemenu {
+    margin: 6px 0 0 10px;
+}
+#yt_menuwrap .yt-main-in2 {
+    min-height: 35px;
+}
+#yt_menuwrap {
+    padding-bottom: 0;
+}
+#content div.moduletabs.top-position div.tabs-container ul.tabs li .tab {
+	padding: 0 5px;
+}
+#yt-totop {
+    width: 30px;
+    height: 30px;
+}

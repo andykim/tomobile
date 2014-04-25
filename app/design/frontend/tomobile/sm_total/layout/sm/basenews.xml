@@ -1,0 +1,23 @@
+<?xml version="1.0"?>   
+<layout version="1.0">
+	<default>
+        <reference name="head">
+        	<action method="addCss"><stylesheet>sm/basenews/css/sm-basenews.css</stylesheet></action>
+        </reference>
+        <!-- all pages
+        <reference name="content">
+        	<block type="basenews/list" name="default.basenews.list">
+			</block>
+        </reference>
+        -->
+    </default>
+	<basenews_index_index>
+		<reference name="content">
+			<block type="basenews/list" name="basenews.list.default">
+				<action method="setConfig">
+				</action>
+			</block>
+		</reference>
+	</basenews_index_index>	
+</layout>   
+	

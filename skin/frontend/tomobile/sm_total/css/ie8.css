@@ -1,0 +1,132 @@
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+.block-currency .currency-select-inner select option{
+	background:none !important;
+}
+
+/*	responsive IE */
+
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+	width: 1170px;
+}
+.span1{
+	width:80px;
+}
+.span1d0 {
+	width:80px;
+}
+.span1d2 {
+	width:100px;
+}
+.span1d7 {
+	width:150px;
+}
+.span2 {
+	width:180px;
+}
+.span2d4 {	/*	2.4 x 5 = 12*/
+	width:220px;
+}
+.span3 {
+	width: 270px;
+}	
+.span4 {
+	width: 370px;
+}
+.span5 {
+	width: 470px;
+}	
+.span6 {
+	width: 570px;
+}	
+.span7 {
+	width: 670px;
+}	
+.span7d2 {
+	width:700px;
+}
+.span8 {
+	width:770px;
+}
+.span9 {
+	width:870px;
+}
+.span9d6 {
+	width:940px;
+}
+.span10 {
+	width:970px;
+}
+.span11 {
+	width:1070px;
+}
+.span12,
+.span12d0{
+	width:1170px;
+}
+[class*="span"] {
+	margin-left: 30px;
+}
+.row {
+	margin-left: -30px;
+}	
+.row-fluid [class*="span"] {
+	margin-left: 1.709401709401709%;	/*0.053191489361702*/
+	*margin-left: 1.673940716493907%;
+}	
+.row-fluid .span1d0 {
+	width: 6.766381766381767%;
+	*width: 6.713190277020064%;
+}
+.row-fluid .span4 {
+	width: 32.1937321937322%;
+	*width: 32.1405407043705%;
+}
+.row-fluid .span2d4 {
+	width: 18.63247863247863%;
+	*width: 18.57928714311693%; 
+}
+.row-fluid .span7d2 {
+	width: 59.31623931623932%;
+	*width: 59.26304782687762%;
+}
+.row-fluid .span9d6 {
+	width: 79.65811965811965%;
+	*width: 79.60492816875794%;
+}
+.ie8 .block-login-top #mini-login,
+.ie8 .block-login-top #mini-password,
+.ie8 input#search,
+.ie8 input#newsletter,
+.ie8 .form-list li.wide .input-box .input-text,
+.ie8 .fieldset li.wide .input-box select,
+.ie8 .fieldset li.wide .input-box textarea,
+.ie8 .fieldset li .input-box textarea,
+.ie8 .form-list li .input-box .input-text,
+.ie8 .fieldset li .input-box textarea{
+	line-height: 27px;
+}

@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<config>
+	  <tabs>
+		<sm translate="label" module="total">
+            <label>Magentech.com</label>
+            <sort_order>206</sort_order>
+        </sm>
+	  </tabs>
+	  <sections>
+		<total_cfg  translate="label" module="total">                    
+		<label>SM Total Theme</label>
+		<tab>sm</tab>
+		<frontend_type>text</frontend_type>
+		<sort_order>150</sort_order>
+		<show_in_default>1</show_in_default>
+		<show_in_website>1</show_in_website>
+		<show_in_store>1</show_in_store>            
+					<groups>
+				      <general translate="label"> 
+					  <label>General settings</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>10</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+							<showcpanel translate="label">
+								<label>Show Cpanel</label>
+								<frontend_type>select</frontend_type>
+								<source_model>adminhtml/system_config_source_yesno</source_model>
+								<sort_order>10</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Show/Hide cPanel on the frontend</comment>
+							</showcpanel>
+							
+							<color_heading translate="label">
+								<label>Select a Color Style</label>
+								<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+								<sort_order>20</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+							</color_heading>						  
+							<color translate="label">
+								<label>Color Style</label>
+								<frontend_type>select</frontend_type>
+								<source_model>total/system_config_source_listColor</source_model>
+								<sort_order>30</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Support 5 Color Styles.You can define other styles by changing parameters of Body/Footer</comment>
+							</color>
+							
+							<body_heading translate="label">
+								<label>Body</label>
+								<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+								<sort_order>40</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+							</body_heading>		
+							<body_background_color translate="label">
+								<label>Body background color</label>
+								<frontend_type>text</frontend_type>
+								<sort_order>50</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Input background color here ( Ex: #000000 )</comment>
+							</body_background_color>	
+							<body_link_color translate="label">
+								<label>Body link color</label>
+								<frontend_type>text</frontend_type>
+								<sort_order>60</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Input link color here ( Ex: #000000 )</comment>
+							</body_link_color>	
+							<body_text_color translate="label">
+								<label>Body text color</label>
+								<frontend_type>text</frontend_type>
+								<sort_order>70</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Input text color here ( Ex: #000000 )</comment>
+							</body_text_color>	
+							
+							<header_heading translate="label">
+								<label>Header</label>
+								<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+								<sort_order>80</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+							</header_heading>	
+							<header_background_color translate="label">
+								<label>Header background color</label>
+								<frontend_type>text</frontend_type>
+								<sort_order>90</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Input background color here ( Ex: #000000 )</comment>
+							</header_background_color>	
+							<header_background_image translate="label">
+								<label>Header background image</label>
+								<frontend_type>select</frontend_type>
+								<source_model>total/system_config_source_listHeaderBgImage</source_model>
+								<sort_order>100</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Support 5 patterns for changing background image ( Ex: Hpattern1 ).</comment>
+							</header_background_image>	
+							
+							<footer_heading translate="label">
+								<label>Footer</label>
+								<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+								<sort_order>110</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+							</footer_heading>	
+							<footer_background_color translate="label">
+								<label>Footer background color</label>
+								<frontend_type>text</frontend_type>
+								<sort_order>120</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Input background color here ( Ex: #000000 )</comment>
+							</footer_background_color>	
+							<footer_background_image translate="label">
+								<label>Footer background image</label>
+								<frontend_type>select</frontend_type>
+								<source_model>total/system_config_source_listFooterBgImage</source_model>
+								<sort_order>130</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Support 5 patterns for changing background image ( Ex: Fpattern1 ).</comment>
+							</footer_background_image>	
+							
+							<menu_style_heading translate="label">
+								<label>Menu style</label>
+								<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+								<sort_order>140</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+							</menu_style_heading>	
+							<menu_styles translate="label">
+								<label>Style</label>
+								<frontend_type>select</frontend_type>
+								<source_model>total/system_config_source_listMenuStyles</source_model>
+								<sort_order>150</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Support 3 Menu Styles. </comment>
+							</menu_styles>
+							
+							<typography_heading translate="label">
+								<label>Typography</label>
+								<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+								<sort_order>160</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+							</typography_heading>	
+							<google_font translate="label">
+								<label>Google font</label>
+								<frontend_type>select</frontend_type>
+								<source_model>total/system_config_source_listGoogleFont</source_model>
+								<sort_order>170</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Input google font ( Ex: Oswald )</comment>
+							</google_font>	
+							<google_font_targets translate="label">
+								<label>Google font targets</label>
+								<frontend_type>textarea</frontend_type>
+								<sort_order>180</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Tags will be applied with Google font with separate "," ( Ex: "h1, .classname" )</comment>
+							</google_font_targets>								
+							<body_font_size translate="label">
+								<label>Body font-size</label>
+								<frontend_type>text</frontend_type>
+								<sort_order>190</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Input body font size text ( Ex: 14px )</comment>
+							</body_font_size>								
+							<body_font_family translate="label">
+								<label>Body font-family</label>
+								<frontend_type>select</frontend_type>
+								<source_model>total/system_config_source_listBodyFont</source_model>
+								<sort_order>200</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Input body font-family ( Ex: Arial )</comment>
+							</body_font_family>	
+							<!--<body_font_family_targets translate="label">
+								<label>Body font-family targets</label>
+								<frontend_type>textarea</frontend_type>
+								<sort_order>145</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Tags will be applied with Body font-family with saperate "," ( Ex: "h1, .classname" )</comment>
+							</body_font_family_targets>	-->							
+					   </fields>
+					   </general>
+					</groups>
+		</total_cfg>
+	  </sections>
+</config>

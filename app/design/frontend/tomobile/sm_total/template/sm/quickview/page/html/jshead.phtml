@@ -1,0 +1,12 @@
+<script type="text/javascript">
+//<![CDATA[
+	if (typeof Sm == 'undefined') Sm = {};
+	Sm.QuickView = {
+		ITEM_DIS_ENABLE : '<?php echo Mage::getStoreConfig('quickview/general/enable');?>',
+		ITEM_CLASS : '<?php echo Mage::getStoreConfig('quickview/general/item_class');?>',
+		BASE_URL : '<?php echo str_replace("index.php/","",$this->getUrl()) ?>',
+		QV_POP_WIDTH : '<?php echo Mage::getStoreConfig('quickview/general/popup_width');?>',
+		QV_POP_HEIGHT : '<?php echo Mage::getStoreConfig('quickview/general/popup_height');?>'
+	};
+//]]	
+</script> 

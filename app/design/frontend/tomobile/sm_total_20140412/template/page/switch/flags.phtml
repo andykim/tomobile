@@ -1,0 +1,48 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   design_default
+ * @package    Mage
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+ $IE8 = (ereg('MSIE 8',$_SERVER['HTTP_USER_AGENT'])) ? true : false;
+ if (($IE6 == 1) || ($IE7 == 1) || ($IE8 == 1)) {
+ // Do fallback stuff that old browsers can do here
+   //echo "it's ie!";
+} else { 
+//echo "do stuff that real browsers can handle here";
+} ?>
+<?php if(count($this->getStores())>1): ?>
+<div class="language-switcher">
+    <!--<label for="select-language"><?php //echo $this->__('Language') ?>: </label>-->
+	<div class="language-select-inner">
+		<select id="select-language" class="flag" onchange="window.location.href=this.value" title="Select Your Language">
+		<?php foreach ($this->getStores() as $_lang): ?>
+			<?php $_selected = ($_lang->getId() == $this->getCurrentStoreId()) ? 'selected="selected"' : '' ?>
+			<option style="background:url('<?php echo $this->getSkinUrl('images/flags/flag-'.$_lang->getCode().'.jpg') ?>') no-repeat scroll 0 center transparent;" value="<?php echo $_lang->getCurrentUrl() ?>" <?php echo $_selected ?>>
+			<?php echo $this->htmlEscape($_lang->getName()) ?></option>
+		<?php endforeach; ?>
+		</select>
+	</div>
+</div>
+<?php endif; ?>

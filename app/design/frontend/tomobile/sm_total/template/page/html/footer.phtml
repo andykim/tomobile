@@ -1,0 +1,91 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   design_default
+ * @package    Mage
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div id="yt_footer" class="wrap font2">
+	<div class="main clearfix">
+    	<div id="yt_topsl2" class="topsl2-wrap">
+			<div class="container">
+				<div class="row-fluid">
+					<!--div class="span5" data-normal="span6" data-tablet="span12" data-stablet="span4"						
+						<div class="span6" data-normal="span6" data-tablet="span6" data-stablet="span4"><div class="block-user3"><?php //echo $this->getLayout()->createBlock('cms/block')->setBlockId('block-user3')->toHtml() ?></div></div>
+						<div class="span12 aboutustotal" data-normal="span12 aboutustotal" data-tablet="span12 aboutustotal" data-stablet="span12 aboutustotal"><div class="block-about-us"><?php //echo $this->getLayout()->createBlock('cms/block')->setBlockId('aboutustotal')->toHtml() ?></div></div>
+					</div-->
+					<div class="span3" data-normal="span3" data-tablet="span4" data-stablet="span4">
+						<div class="block-user1 block-item">
+							<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('block-user1')->toHtml() ?>
+						</div>
+					</div>
+					<div class="span3 gallery-wrap" data-normal="span3 gallery-wrap" data-tablet="span4 gallery-wrap" data-stablet="span4 gallery-wrap">
+						<div class="block-user2 block-item">
+							<?php  echo $this->getChildHtml('gallery.list.default'); ?>
+						</div>
+					</div>
+					<div class="span3 newsletter" data-normal="span3 newsletter" data-tablet="span4 newsletter" data-stablet="span4 newsletter">
+						<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('block-user5')->toHtml() ?>
+						<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('position-2')->toHtml() ?>
+					</div>							
+					<div class="span3 location" data-normal="span3 location" data-tablet="span4 location" data-stablet="span4 location">
+						<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('location')->toHtml() ?>
+					</div>
+					<!--div class="span7" data-normal="span6" data-tablet="span12 footer-under-wrap" data-stablet="span4">
+						<div class="span4 services-wrap" data-normal="span4 services-wrap" data-tablet="span4 services-wrap" data-stablet="span4 services-wrap">
+							<div class="block-user1 block-item">
+								<?php  //echo $this->getLayout()->createBlock('cms/block')->setBlockId('services')->toHtml() ?>
+							</div>
+						</div>
+						
+						<div class="span4" data-normal="span6" data-tablet="span4" data-stablet="span4">
+							<div class="span12 block-user5 block-item">
+								<?php //echo $this->getLayout()->createBlock('cms/block')->setBlockId('block-user5')->toHtml() ?>
+							</div>
+							<div class="span12 location">
+								<?php //echo $this->getLayout()->createBlock('cms/block')->setBlockId('location')->toHtml() ?>
+							</div>
+						</div>						
+					</div-->
+				</div>
+			</div>
+        </div>	
+        <div class="yt-info">
+            <?php //echo $this->getChildHtml() ?>
+			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('block-info-footer')->toHtml() ?>	
+        </div>
+        <div class="yt-copyright">
+        <?php //echo $this->__('Help Us to Keep Magento Healthy') ?><!--a href="http://www.magentocommerce.com/bug-tracking" id="bug_tracking_link"><strong><?php //echo $this->__('Report All Bugs') ?></strong></a> <?php //echo $this->__('(ver. %s)', Mage::getVersion()) ?><br /-->
+        <script type="text/javascript">
+            //$('bug_tracking_link').target = "varien_external";
+        </script>
+        <script type="text/javascript" src="<?php echo $this->getSkinUrl('js/custom.js') ?>"></script>
+        <?php echo $this->getCopyright() ?> Designed by <a href="http://www.magentech.com/" title="Visit MagenTech.Com!">MagenTech.Com</a>		
+        </div>
+	</div>
+</div>
+
+
+<?php
+include (dirname(__FILE__).'/new_cpanel.phtml');
+include (dirname(__FILE__).'/backtotop.phtml');
+?>

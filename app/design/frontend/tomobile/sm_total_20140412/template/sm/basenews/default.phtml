@@ -1,0 +1,198 @@
+<?php
+/*------------------------------------------------------------------------
+ # SM Base News - Version 1.0
+ # Copyright (c) 2013 YouTech Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: YouTech Company
+ # Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+
+$options = $this->getConfigObject();
+$smarthelper= Mage::helper('basenews/utils');
+$list = $this->getCmspageInfo();
+//zend_debug::dump($list);
+$uniquied = 'sm_basenews_'.time().rand();
+$item_first = (int)$options->item_first_display;
+if($item_first >= (int)count($list)){
+	$item_first = count($list) ;
+}
+else if($item_first <= 0){
+	$item_first = 1;
+}else{
+	$item_first = $item_first ;
+}
+$class_basic= 'respl01-'.$options->nb_column1.' respl02-'.$options->nb_column2.' respl03-'.$options->nb_column3.' respl04-'.$options->nb_column4;
+if(!empty($list)){
+	echo $this->getScriptTags();
+?>
+<?php if( $options->theme == "theme2" ){?>
+	<script type="text/javascript">
+	//<![CDATA[
+		jQuery(document).ready(function($) {
+			 /*
+			 imageloaded
+			 */
+			  $.fn.imagesLoaded = function( callback ) {
+			    var $this = this,
+			        $images = $this.find('img').add( $this.filter('img') ),
+			        len = $images.length,
+			        blank = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==',
+			        loaded = [];
+
+			    function triggerCallback() {
+			      callback.call( $this, $images );
+			    }
+
+			    function imgLoaded( event ) {
+			      var img = event.target;
+			      if ( img.src !== blank && $.inArray( img, loaded ) === -1 ){
+			        loaded.push( img );
+			        if ( --len <= 0 ){
+			          setTimeout( triggerCallback );
+			          $images.unbind( '.imagesLoaded', imgLoaded );
+			        }
+			      }
+			    }
+
+			    // if no images, trigger immediately
+			    if ( !len ) {
+			      triggerCallback();
+			    }
+
+			    $images.bind( 'load.imagesLoaded error.imagesLoaded',  imgLoaded ).each( function() {
+			      // cached images don't fire load sometimes, so we reset src.
+			      var src = this.src;
+			      // webkit hack from http://groups.google.com/group/jquery-dev/browse_thread/thread/eee6ab7b2da50e1f
+			      // data uri bypasses webkit log warning (thx doug jones)
+			      this.src = blank;
+			      this.src = src;
+			    });
+
+			    return $this;
+			  };
+
+			$(window).load(function(){
+				$('#<?php echo $uniquied;?>').imagesLoaded( function(){});
+			});
+			$('#<?php echo $uniquied;?>').imagesLoaded( function(){
+
+				$('#<?php echo $uniquied;?>').sm_accordion({
+					items : '.acd-item',
+					heading : '.acd-header',
+					content : '.acd-content-wrap',
+					active_class : 'selected',
+					event : '<?php echo $options->accmouseenter;?>',
+					delay : 300,
+					duration : 500,
+					active : '<?php echo $item_first;?>'
+				});
+
+				var height_content = function(){
+				  	$('.acd-item', '#<?php echo $uniquied;?>').each(function(){
+				        var inner = $('.acd-content-wrap-inner', $(this).filter('.selected'));
+			            if(inner.length){
+			                var inner_height = inner.height();
+			                inner.parent().css('height',inner_height);
+			            }
+				   });
+				}
+				if ( $.browser.msie  && parseInt($.browser.version, 10) <= 8){
+				//nood
+				}else{
+		      		  $(window).resize(function() {
+		        		height_content();
+		       		 });
+				}
+			});
+
+		});
+	//]]>
+	</script>
+<?php }?>
+
+	<?php if(!empty($options->pretext)){?>
+	<div class="acd-pretext">
+		<?php echo $options->pretext; ?>
+	</div>
+	<?php }?>
+	<div id="<?php echo $uniquied; ?>" class="sm-basenews <?php if( $options->theme == "theme2" ){echo " sm-basenews-accordion";}else{ echo " sm-basenews-basic";}?>">
+		<div class="basenews-title">Latest blog</div>
+		<div class="acd-items <?php if( $options->theme == "theme1" ){echo " ".$class_basic;}?>">		
+			<?php $i= 0; foreach($list as $item){ $i++; ?>
+			<div class="acd-item <?php if($i==1){echo "first";}?>">
+				<div class="acd-header">
+					<?php if( $options->theme == "theme1" ){?>
+						<a href="<?php echo $item->link ?>" title="<?php echo $item->title; ?>" <?php echo $smarthelper->getTargetAttr($options->product_links_target);?> onclick="javascript: return true";>
+					<?php }?>
+						<?php echo $item->title; ?>
+					<?php if( $options->theme == "theme1" ){?>
+						</a>
+					<?php }?>
+				</div>
+				<div class="acd-content-wrap cf" style="<?php if($options->theme == "theme2" && $i == count($list)){ echo "border-bottom:1px solid #ccc";}?>">
+					<div class="acd-content-wrap-inner cf">
+						<?php if( $options->product_image_disp == 1 ) {?>
+						<div class="acd-image cf">
+							<a href="<?php echo $item->link ?>" title="<?php echo $item->title; ?>" <?php echo $smarthelper->getTargetAttr($options->product_links_target);?> onclick="javascript: return true";>
+				    			<img style="width:<?php echo $options->product_image_width; ?>px; height:<?php echo $options->product_image_height; ?>px;" src="<?php echo $item->image;?>" alt="<?php echo $item->title;?>"/>
+							</a>
+						</div>
+						<?php }?>
+						
+						<div class="basenews-date">
+							<div class="bs-day">
+								<?php echo $item->dateday;?>
+							</div>
+							<div class="bs-month">
+								<?php echo $item->datemonth; ?>
+							</div>
+							
+						</div>
+						
+						<?php if( $options->item_desc_display == 1 && !empty($options->item_desc_display) || $options->product_details_page_link_disp == 1 && !empty($options->item_desc_display)) {?>
+						<div class="acd-content">
+							<div class="acd-description-title">
+								<a class="font1" href="<?php echo $item->link ?>" title="<?php echo $item->title; ?>" <?php echo $smarthelper->getTargetAttr($options->product_links_target);?> onclick="javascript: return true";>
+									<?php echo $item->title; ?>
+								</a>
+							</div>
+							<?php if( $options->item_desc_display == 1 ) {?>
+							<div class="acd-description">
+								<?php echo $item->desc; ?>
+							</div>
+							<?php }?>
+							<?php if( $options->product_details_page_link_disp == 1 ) {?>
+							<div class="accd-readmore">
+								<a href="<?php echo $item->link ?>" title="<?php echo $item->title; ?>" <?php echo $smarthelper->getTargetAttr($options->product_links_target);?> onclick="javascript: return true";>
+								<?php echo $options->product_details_page_link_text; ?>
+								</a>
+							</div>
+							<?php } ?>
+						</div>
+						<?php } ?>
+					</div>
+				</div>
+			</div>
+			<?php
+	    		$clear = 'clr1';
+	    		if ($i % 2 == 0) $clear .= ' clr2';
+	    		if ($i % 3 == 0) $clear .= ' clr3';
+	    		if ($i % 4 == 0) $clear .= ' clr4';
+	    		if ($i % 5 == 0) $clear .= ' clr5';
+	    		if ($i % 6 == 0) $clear .= ' clr6';
+	    	?>
+	    	<div class="<?php echo $clear; ?>"></div>
+			<?php } ?>
+		</div>
+	</div>
+	<?php if(!empty($options->posttext)){?>
+	<div class="acd-posttext">
+		<?php echo $options->posttext; ?>
+	</div>
+	<?php }?>
+<?php }else{
+	echo $this->__('Has no content to show!');
+}?>
+
+
+

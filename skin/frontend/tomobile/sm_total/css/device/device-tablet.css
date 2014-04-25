@@ -1,0 +1,136 @@
+/******************************************
+***          YT Framework: CSS          ***
+*******************************************/
+body.fs1 #yt_wrapper {
+  font-size: 1.1em !important;
+}
+
+body.fs2 #yt_wrapper {
+  font-size: 1.2em !important;
+}
+
+body.fs3 #yt_wrapper {
+  font-size: 1.2em !important;
+}
+
+body.fs4 #yt_wrapper{
+  font-size: 1.4em !important;
+}
+
+body.fs5 #yt_wrapper {
+  font-size: 1.5em !important;
+}
+
+body.fs6 #yt_wrapper {
+  font-size: 1.7em !important;
+}
+
+body .yt-main {
+    width: 720px;
+	max-width:1200px;
+}
+
+/* ----------------------------*/
+/*     Block: yt_menuwrap      */
+/* ----------------------------*/
+div.level1.separator, 
+a.level1 {
+    padding: 0 20px !important;
+}
+div.separator.level1 span.menu-title, 
+a.level1 span.menu-title {
+    padding: 16px 0 !important;
+}
+ul.navirtl .level1 span.menu-desc, 
+ul.navi .level1 span.menu-desc {
+	display:none;
+}
+
+/* ----------------------------*/
+/*     Block: yt_spotlight1    */
+/* ----------------------------*/
+#user3,
+#user4,
+#user5{
+	width:33.3% !important;
+}
+#yt_spotlight1 #user6{
+	width:100% !important;
+	height:auto !important;
+}
+/* ----------------------------*/
+/*     Block: content          */
+/* ----------------------------*/
+
+#right_top,
+#right_bottom{
+	width:480px !important;
+	float:none !important;
+}
+/*#right_top .moduletable.masonry-brick,
+#right_bottom .moduletable.masonry-brick{
+	width:200px;
+}*/
+#right1,
+right2{
+	width:120px !important;
+	float:none !important;
+}
+/* ----------------------------*/
+/*     Block: yt_spotlight2    */
+/* ----------------------------*/
+
+#usera,
+#userb,
+#userc{
+	width:33.3% !important;
+}
+#yt_spotlight2 #userd{
+	width:100% !important;
+	height:auto !important;
+}
+
+/* ----------------------------*/
+/*     Block: yt_spotlight3    */
+/* ----------------------------*/
+#user10,
+#user11,
+#user12{
+	width:33.3% !important;
+}
+#yt_spotlight3 #user13{
+	width:100% !important;
+	height:auto !important;
+	padding: 20px 0;
+}
+/* ----------------------------*/
+/*     Block: #yt_footer       */
+/* ----------------------------*/
+#yt_footer {
+    height: auto !important;
+}
+.group-footnav{
+	width:100% !important;
+	overflow:hidden;
+	padding-bottom:15px;
+	margin:0 auto;
+	float:none !important;
+}
+#yt_footer #footnav ul{
+	float:none !important;
+	text-align:center;
+}
+.yt-linkfooter{
+	float:none !important;
+	text-align:center;
+}
+.yt-copyright{
+	width:100% !important;
+	text-align:center;
+	margin:0 auto;
+	float:none !important;
+}
+#yt-totop {
+    width: 37px;
+    height: 37px;
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+        <sm>
+            <label>MagenTech.com</label>
+            <sort_order>250</sort_order>
+        </sm>
+    </tabs>
+    <sections>
+        <quickview translate="label" module="quickview">
+            <label>SM Quickview</label>
+            <tab>sm</tab><!-- Tham chieu den ten bat ky sm o tren -->
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>                
+                <general translate="label">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>			
+                    	<enable>			
+                            <label>Enable Quickview Module</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model> 
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                    			
+                    	</enable>
+                    		                    			
+	            		<image_position translate="label">
+                    		<label>Position button quickview</label>
+		            		<frontend_type>select</frontend_type>
+		            		<source_model>quickview/system_config_source_listPosition</source_model>
+		            		<sort_order>20</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</image_position>  
+						                        
+                        <popup_width translate="label">
+                            <label>Popup Width</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>29</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>unit(pixel|percent), example: input 100px with unit pixel or input 100% with unit percenter</comment>
+                        </popup_width>
+						
+						<popup_height translate="label">
+                            <label>Popup Height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>unit(pixel|percent), example: input 100px with unit pixel or input 100% with unit percenter</comment>
+                        </popup_height>
+                    </fields>
+                </general>
+            </groups>
+        </quickview>
+    </sections>
+</config>

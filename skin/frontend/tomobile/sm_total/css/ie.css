@@ -1,0 +1,272 @@
+.col2-set,
+.col3-set,
+.col4-set,
+.col2-alt-set,
+.head,
+.page-head,
+.page-head-alt,
+.page-popup .print-head,
+.header-top-container,
+.header-top,
+.header-nav-container,
+.header-nav,
+.middle,
+.product-img-box .more-views ul,
+.button-set,
+.actions,
+.button-container,
+.ratings,
+.page-head,
+.page-head-alt,
+.advanced-search li,
+.group-select li,
+.search-autocomplete li,
+.side-col li,
+.account-box li,
+.address-list li,
+.listing-type-list .listing-item,
+.listing-type-list .product-info .product-reviews,
+.account-nav a,
+.account-box,
+.my-review-detail,
+.generic-product-list li,
+.product-options dt,
+.product-options dd ul.options-list li,
+.product-options dd ul.options-list .label,
+.product-options-bottom,
+.truncated_full_value,
+.add-to-holder,
+.advanced-search-summary-box,
+.listing-type-grid .grid-row,
+.one-page-checkout li.section,
+.one-page-checkout .default-box,
+.box ol li,
+.multi-address-checkout-box .box,
+.page-title, .page-title-alt,
+.product-collateral .head,
+.add-tag-box,.form-add,
+.box-account .box-head,
+.ytm-products-slider-listing .head,
+.form-list li,
+.opc .step-title,
+.cart-collaterals .col2-set #discount-coupon-form,
+.cart-collaterals .col2-set .shipping,
+.page-sitemap .pager,
+#customer-reviews .pager,
+.products-list .item,
+.my-account ol li,
+.buttons-set,
+.block-title,
+.products-grid,
+.minisite .ytm-tabs-title-top ul.ytm-tabs-title,
+.cart-collaterals { zoom:1; }
+
+.box .head {}
+
+
+.form-list li {
+	clear: both;
+	display: block;
+}
+
+input.radio { margin-top: 3px; }
+
+input.checkbox { margin-top: 1px; }
+
+/* Clearer */
+
+.product-review .ratings-table { *position: relative; }
+.clear { clear:both; font-size:0; line-height:0; height:0; visibility:hidden; overflow:hidden; }
+
+.error-msg, .notice-msg, .note-msg, .success-msg {
+	zoom: 1;
+}
+
+* html #yt_sidenav li ul {
+	zoom: 1;
+}
+
+*+html #yt_sidenav li ul {
+	zoom: 1;
+}
+
+#yt_sidenav {
+	zoom: 1;
+}
+
+#nav li a {
+	zoom: 1;
+}
+
+* html #yt_topsl2 .box {
+	zoom: 1;
+}
+
+* html #yt_botsl1 .box {
+	zoom: 1;
+}
+
+* html #yt_botsl1 .box .inner {
+	zoom: 1;
+}
+
+* html #yt_botsl1 .inner {
+	zoom: 1;
+}
+
+* html #co-billing-form .form-list li{
+	zoom: 0;
+}
+
+* html #co-billing-form .buttons-set .button {
+	margin-bottom: 1px;
+}
+
+* html .button span {
+	margin-top: 2px;
+}
+
+* html[xmlns] .button, 
+* html[xmlns] .button-cart {
+	padding: 0 0 0 1px !important;
+	overflow: auto !important;
+}
+
+* html .pager .pages,
+* html .pager .limiter {
+	margin-top: 8px !important;
+}
+
+* html .ytm-slide-buttons {
+	background: #101010;
+	border: 1px solid #454545;
+}
+
+* html #yt_topsl1 {
+	margin: 0;
+}
+
+* html #yt_topsl1 .yt-box-left .inner {
+	padding-left: 0 !important;
+}
+
+* html #yt_topsl1 .yt-box-right .inner {
+	padding-right: 0 !important;
+}
+
+
+* html #yt_botsl div.yt-box-left, 
+* html #yt_botsl div.yt-box-center,
+* html #yt_botsl div.yt-box-right {
+	height: 325px;
+}
+
+.product-collateral .attribute-specs {
+/*	padding: 20px;
+*/}
+
+.product-collateral .attribute-specs .data-table {
+	margin: 0;
+}
+
+* html .sorter .grid,
+* html .sorter .list {
+
+}
+
+* html #yt_pathway {
+	padding-right: 40px;
+	width: 100%;
+}
+
+* html .yt-top .block-currency .block-title {
+	width: 120px;
+}
+
+* html .yt-top .block-currency select {
+	position: relative;
+}
+
+* html a.button span {
+	float: left;
+}
+
+* html .rating-box {
+	background-color: #fff;
+}
+
+.ytm-slider-ul {
+	zoom: 1;
+}
+
+/* */
+
+#yt_menuwrap .main { z-index: 2; }
+
+#yt_container .main { z-index: 1; }
+
+#nav ul { zoom: 1; }
+
+.product-collateral .box-collateral #upsell-product-table .rating-links {
+	overflow: hidden;
+}
+
+.view-mode label {
+	vertical-align: baseline;	
+}
+
+.form-search .button { padding: 4px 5px 5px;}
+
+*:first-child+html .form-search .button { padding: 2px 5px 3px;}
+
+button span { position: relative; }
+
+.block-compare ol#compare-items li,
+.box ol li, .block ol li,
+ {
+	zoom: 1;
+}
+
+.cart .page-title .button { float:none; }
+
+#payment_method { margin-right: 10px; }
+
+#yt_botslider, .yt-footer { *float:left; }
+
+
+#nav li.over ul {
+	border: 1px solid #eee;
+}
+
+#addTagForm .input-box {
+	*margin-top: 2px;	
+}
+
+input#search {
+	*margin-right: 9px;
+}
+
+.yt-tab-content {
+	zoom: 1;
+}
+
+#yt_sidenav li,
+.products-grid li.item {
+	zoom: 1;
+}
+
+#yt_menuwrap {
+	position: relative;
+	z-index: 3;
+}
+
+#yt_header .main {
+/*	position: relative;
+	z-index: 999;
+*/}
+
+#yt_botsl .block .block-title strong span {		*padding-left: 2px;	}
+
+.top-search .button{		padding:0;	}
+
+

@@ -1,0 +1,13 @@
+<script type="text/javascript">
+//<![CDATA[
+	if (typeof Sm == 'undefined') Sm = {};
+	Sm.QuickView = {
+		ITEM_CLASS : '<?php echo Mage::getStoreConfig('quickview/general/item_class');?>',
+		BASE_URL : '<?php echo str_replace("index.php/","",$this->getUrl()) ?>',
+		QV_POP_WIDTH : '<?php echo Mage::getStoreConfig('quickview/general/popup_width');?>',
+		QV_POP_HEIGHT : '<?php echo Mage::getStoreConfig('quickview/general/popup_height');?>',
+		QV_IMG_POSITION : '<?php echo Mage::getStoreConfig('quickview/general/image_position');?>',
+		QV_IMG: '<?php echo $this->getSkinUrl('sm/quickview/images/bg_quickview.png'); ?>'
+	};
+//]]	
+</script> 
